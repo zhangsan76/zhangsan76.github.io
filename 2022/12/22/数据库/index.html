@@ -1,0 +1,2200 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+        <title>Eee | MyBlog</title>
+        <meta name="author" content="zhang">
+        <meta name="description" content="lalala">
+        <meta name="keywords" content="好好学习">
+        <link rel="icon" href="/images/avatar.png">
+        <script src="https://cdn.staticfile.org/instant.page/5.1.1/instantpage.min.js" type="module"></script>
+        <script src="https://cdn.staticfile.org/font-awesome/6.2.1/js/all.min.js"></script>
+        <script src="https://cdn.staticfile.org/vue/3.2.45/vue.global.prod.min.js"></script>
+        
+        <script src="https://polyfill.io/v3/polyfill.min.js?features="></script>
+        
+        <link rel="stylesheet" href="/css/fonts.min.css">
+        <link rel="stylesheet" href="/css/particlex.css">
+        
+    <meta name="generator" content="Hexo 6.3.0"></head>
+    <body>
+        <div id="loading" style="height:100vh;width:100vw;position:fixed;display:flex;z-index:2147483647;justify-content:space-between;background:#fff;transition:all 0.3s ease-out;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none">
+    <div style="position:fixed;height:100vh;width:100vw;display:flex;justify-content:center;align-items:center">
+        <div id="loadcontent" style="width:50vmin;height:50vmin;padding:50px;border-radius:50%;display:flex;justify-content:center;align-items:center;border:solid 10px #a3ddfb;text-align:center">
+            <div>
+                <h2>LOADING...</h2>
+                <p style="word-break:keep-all">加载过慢请开启缓存(浏览器默认开启)</p>
+                <div>
+                    <img alt="loading" src="/loading.gif">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+        <div id="layout">
+            <i data-fa-symbol="calendar-solid" class="fa-solid fa-calendar fa-fw"></i>
+            <i data-fa-symbol="bookmark-solid" class="fa-solid fa-bookmark fa-fw"></i>
+            <i data-fa-symbol="tags-solid" class="fa-solid fa-tags fa-fw"></i>
+            <transition name="into">
+                <div v-show="showpage" style="display: -not-none">
+                    <div id="menushow">
+                        <nav id="menu">
+    <div class="desktop-menu">
+        <a href="/">
+            <span class="title">MyBlog</span>
+        </a>
+        
+        <a href="/">
+            <i class="fa-solid fa-house fa-fw"></i>
+            <span>&ensp;home</span>
+        </a>
+        
+        <a href="/archives">
+            <i class="fa-solid fa-box-archive fa-fw"></i>
+            <span>&ensp;archives</span>
+        </a>
+        
+    </div>
+    <div :class="'phone-menu ' + menushow" id="phone-menu">
+        <div class="curtain" @click="menushow = !menushow" v-show="menushow"></div>
+        <div class="title" @click="menushow = !menushow">
+            <i class="fa-solid fa-bars fa-fw"></i>
+            <span>&emsp;MyBlog</span>
+        </div>
+        <transition name="slide">
+        <div class="items" v-show="menushow">
+            
+            <a href="/">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-house fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">home</div>
+                </div>
+            </a>
+            
+            <a href="/archives">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-box-archive fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">archives</div>
+                </div>
+            </a>
+            
+        </div>
+        </transition>
+    </div>
+</nav>
+                    </div>
+                    <div id="main">
+                        <div class="article">
+    <div>
+        <h1>Eee </h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <svg class="fa-icon"><use xlink:href="#calendar-solid"></use></svg>
+            </span>
+            2022/12/22
+        </span>
+        
+        
+    </div>
+    
+    <div class="content" v-pre>
+        <h1 id="1-初识MySQL"><a href="#1-初识MySQL" class="headerlink" title="1. 初识MySQL"></a>1. 初识MySQL</h1><p>JavaEE:企业级Java开发 WEB</p>
+<p>前端（页面：展示，数据）</p>
+<p>后台（连接点：连接数据库JDBC，链接前端（控制，控制视图跳转，和给前端传递数据））</p>
+<p>数据库（存数据，Txt，Excel，word）</p>
+<p><strong>数据库是所有软件体系中最核心的存在</strong> DBA</p>
+<h2 id="1-1-什么是数据库"><a href="#1-1-什么是数据库" class="headerlink" title="1.1 什么是数据库"></a>1.1 什么是数据库</h2><p>数据库（DB：DateBase）</p>
+<p>概念：数据仓库，<strong>软件</strong>，安装在操作系统之上！SQL，可以存储大量的数据。500w！</p>
+<p>作用：存储数据，管理数据</p>
+<h2 id="1-2-数据库分类"><a href="#1-2-数据库分类" class="headerlink" title="1.2 数据库分类"></a>1.2 数据库分类</h2><p><strong>关系型数据库：</strong>（SQL）</p>
+<ul>
+<li>MySql，Oracle，SqlSever，DB2，SQLlite</li>
+<li>通过表和表之间，行和列之间的关系进行数据的存储，学员信息表，考勤表。。。</li>
+</ul>
+<p><strong>非关系型数据库：</strong>（NoSQL）not only SQL</p>
+<ul>
+<li>Redis，MongDB</li>
+<li>非关系型数据库，对象存储，通过对象自身的属性来决定</li>
+</ul>
+<hr>
+<p><strong>DBMS（数据库管理系统）</strong></p>
+<ul>
+<li>数据库的管理软件，科学有效的管理我们的数据。维护和获取数据</li>
+<li>MySQL，本质是一个数据库管理系统</li>
+</ul>
+<h2 id="1-3-MySQL简介"><a href="#1-3-MySQL简介" class="headerlink" title="1.3 MySQL简介"></a>1.3 MySQL简介</h2><p><strong>MySQL是一个关系型数据库管理系统</strong></p>
+<p>开源的数据库软件</p>
+<p>体积小、速度快、总体拥有成本低</p>
+<p>适用于中小型网站，或者大型网站，集群</p>
+<h1 id="2-数据库的三大范式"><a href="#2-数据库的三大范式" class="headerlink" title="2. 数据库的三大范式"></a>2. 数据库的三大范式</h1><p>1、第一范式(1NF)是指数据库表的每一列都是<strong>不可分割</strong>的基本数据线；也就是说：每列的值具有原子性，不可再分割。</p>
+<p>2、第二范式(2NF)是<strong>在第一范式(1NF)的基础上</strong>建立起来得，满足第二范式(2NF)必须先满足第一范式(1NF)。如果表是单主键，那么主键以外的列必须完全依赖于主键；如果表是复合主键，那么主键以外的列必须完全依赖于主键，不能仅依赖主键的一部分。</p>
+<p>3、第三范式(3NF)是在<strong>第二范式的基础上</strong>建立起来的，即满足第三范式必须要先满足第二范式。第三范式(3NF)要求：表中的非主键列必须和主键直接相关而不能间接相关；也就是说：非主键列之间不能相关依赖。</p>
+<h1 id="3-数据库的数据类型"><a href="#3-数据库的数据类型" class="headerlink" title="3. 数据库的数据类型"></a>3. 数据库的数据类型</h1><p>使用MySQL数据库存储数据时，不同的数据类型决定了 MySQL存储数据方式的不同。为此，MySQL数据库提供了多种数据类型，其中包括整数类型、浮点数类型、定点 数类型、日期和时间类型、字符串类型、二进制…等等数据类型。</p>
+<h2 id="3-1-整数类型"><a href="#3-1-整数类型" class="headerlink" title="3.1 整数类型"></a>3.1 整数类型</h2><p>根据数值取值范围的不同MySQL 中的整数类型可分为5种，分别是TINYINT、SMALUNT、MEDIUMINT、<strong>INT</strong>（常用）和 BIGINT。</p>
+<table>
+<thead>
+<tr>
+<th>数据类型</th>
+<th>字节数</th>
+<th>无符号的取值范围</th>
+<th>有符号数的取值范围</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>TINYINT</td>
+<td>1</td>
+<td>0~255</td>
+<td>-128~127</td>
+</tr>
+<tr>
+<td>SMALLINT</td>
+<td>2</td>
+<td>0~65535</td>
+<td>-32768~32768</td>
+</tr>
+<tr>
+<td>MEDIUMINT</td>
+<td>3</td>
+<td>0~16777215</td>
+<td>-8388608~8388608</td>
+</tr>
+<tr>
+<td><strong>INT</strong></td>
+<td><strong>4</strong></td>
+<td><strong>0~4294967295</strong></td>
+<td><strong>-2147483648~ 2147483648</strong></td>
+</tr>
+<tr>
+<td>BIGINT</td>
+<td>8</td>
+<td>0~18446744073709551615</td>
+<td>-9223372036854775808~9223372036854775808</td>
+</tr>
+</tbody></table>
+<h2 id="3-2-浮点数类型和定点数类型"><a href="#3-2-浮点数类型和定点数类型" class="headerlink" title="3.2 浮点数类型和定点数类型"></a>3.2 浮点数类型和定点数类型</h2><p>在MySQL数据库中使用浮点数和定点数来存储小数。浮点数的类型有两种：单精度浮点数类型（FLOAT)和双精度浮点数类型（DOUBLE)。而定点数类型只有一种即DECIMAL类型。下图列举了 MySQL中浮点数和定点数类型所对应的字节大小及其取值范围：</p>
+<table>
+<thead>
+<tr>
+<th>数据类型</th>
+<th>字节数</th>
+<th>有符号的取值范围</th>
+<th>无符号的取值范围</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>FLOAT</td>
+<td>4</td>
+<td>-3.402823466E+38~-1.175494351E-38</td>
+<td>0和1.175494351E-38~3.402823466E+38</td>
+</tr>
+<tr>
+<td>DOUBLE</td>
+<td>8</td>
+<td>-1.7976931348623157E+308~2.2250738585072014E-308</td>
+<td>0和2.2250738585072014E-308~1.7976931348623157E+308</td>
+</tr>
+<tr>
+<td>DECIMAL（M,D）</td>
+<td>M+2</td>
+<td>-1.7976931348623157E+308~2.2250738585072014E-308</td>
+<td>0和2.2250738585072014E-308~1.7976931348623157E+308</td>
+</tr>
+</tbody></table>
+<p>从上图中可以看出：DECIMAL类型的取值范围与DOUBLE类型相同。但是，请注意：DECIMAL类型的有效取值范围是由M和D决定的。其中，<strong>M表示的是数据的长 度</strong>，<strong>D表示的是小数点后的长度</strong>。比如，将数据类型为DECIMAL(6,2)的数据6.5243 插人数据库后显示的结果为6.52</p>
+<h2 id="3-3-字符串类型"><a href="#3-3-字符串类型" class="headerlink" title="3.3 字符串类型"></a>3.3 字符串类型</h2><p>在MySQL中常用CHAR 和 VARCHAR 表示字符串。两者不同的是：VARCHAR存储可变长度的字符串。<br><strong>当数据为CHAR(M)类型时，不管插入值的长度是实际是多少它所占用的存储空间都是M个字节；而VARCHAR(M)所对应的数据所占用的字节数为实际长度加1</strong></p>
+<table>
+<thead>
+<tr>
+<th>插入值</th>
+<th>CHAR(3)</th>
+<th>存储需求</th>
+<th><strong>VARCHAR(3)</strong></th>
+<th><strong>存储需求</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>‘’</td>
+<td>‘’</td>
+<td>3个字节</td>
+<td>‘’</td>
+<td>1个字节</td>
+</tr>
+<tr>
+<td>‘a’</td>
+<td>‘a’</td>
+<td>3个字节</td>
+<td>‘a’</td>
+<td>2个字节</td>
+</tr>
+<tr>
+<td>‘ab’</td>
+<td>‘ab’</td>
+<td>3个字节</td>
+<td>‘ab’</td>
+<td>3个字节</td>
+</tr>
+<tr>
+<td>‘abc’</td>
+<td>‘ab’</td>
+<td>3个字节</td>
+<td>‘abc’</td>
+<td>4个字节</td>
+</tr>
+<tr>
+<td>‘abcd’</td>
+<td>‘ab’</td>
+<td>3个字节</td>
+<td>‘abc’</td>
+<td>4字节</td>
+</tr>
+</tbody></table>
+<h2 id="3-4-文本类型"><a href="#3-4-文本类型" class="headerlink" title="3.4 文本类型"></a>3.4 文本类型</h2><p>文本类型用于表示大文本数据，例如，文章内容、评论、详情等，它的类型分为如下4种：</p>
+<table>
+<thead>
+<tr>
+<th>数据类型</th>
+<th>储存范围</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>TINYTEXT</td>
+<td>0~255字节</td>
+</tr>
+<tr>
+<td>TEXT</td>
+<td>0~65535字节</td>
+</tr>
+<tr>
+<td>MEDIUMTEXT</td>
+<td>0~16777215字节</td>
+</tr>
+<tr>
+<td>LONGTEXT</td>
+<td>0~4294967295字节</td>
+</tr>
+</tbody></table>
+<h2 id="3-5-日期与时间类型"><a href="#3-5-日期与时间类型" class="headerlink" title="3.5 日期与时间类型"></a>3.5 日期与时间类型</h2><p>MySQL提供的表示日期和时间的数据类型分别是 ：YEAR、DATE、TIME、DATETIME 和 TIMESTAMP。下图列举了日期和时间数据类型所对应的字节数、取值范围、日期格式以及零值：</p>
+<table>
+<thead>
+<tr>
+<th>数据类型</th>
+<th>字节数</th>
+<th>取值范围</th>
+<th>日期格式</th>
+<th>零值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>YEAR</td>
+<td>1</td>
+<td>1901~2155</td>
+<td>YYYY</td>
+<td>0000</td>
+</tr>
+<tr>
+<td>DATE</td>
+<td>4</td>
+<td>1000-01-01~9999-12-31</td>
+<td>YYYY-MM-DD</td>
+<td>0000-00-00</td>
+</tr>
+<tr>
+<td>TIME</td>
+<td>3</td>
+<td>-838：59：59~ 838：59：59</td>
+<td>HH:MM:SS</td>
+<td>00:00:00</td>
+</tr>
+<tr>
+<td>DATETIME</td>
+<td>8</td>
+<td>1000-01-01 00:00:00~9999-12-31 23:59:59</td>
+<td>YYYY-MM-DD HH:MM:SS</td>
+<td>0000-00-00 00:00:00</td>
+</tr>
+<tr>
+<td>TIMESTAMP</td>
+<td>4</td>
+<td>1970-01-01 00:00:01~2038-01-19 03:14:07</td>
+<td>YYYY-MM-DD HH:MM:SS</td>
+<td>0000-00-00 00:00:00</td>
+</tr>
+</tbody></table>
+<h3 id="3-5-1-YEAR类型"><a href="#3-5-1-YEAR类型" class="headerlink" title="3.5.1 YEAR类型"></a>3.5.1 YEAR类型</h3><p>YEAR类型用于表示年份，在MySQL中，可以使用以下三种格式指定YEAR类型 的值。<br>1、使用4位字符串或数字表示，范围为’1901’—‘2155’或1901—2155。例如，输人 ‘2019’或2019插人到数据库中的值均为2019。<br>2、使用两位字符串表示，范围为’00’—‘99’。其中，‘00’—‘69’范围的值会被转换为 2000—2069范围的YEAR值，‘70’—‘99’范围的值会被转换为1970—1999范围的YEAR 值。例如，输人’19’插人到数据库中的值为2019。<br>3、使用两位数字表示，范围为1—99。其中，1—69范围的值会被转换为2001— 2069范围的YEAR值，70—99范围的值会被转换为1970—1999范围的YEAR值。例 如，输人19插入到数据库中的值为2019。<br>请注意：<strong>当使用YEAR类型时，一定要区分’0’和0。因为字符串格式的’0’表示的YEAR值是2000而数字格式的0表示的YEAR值是0000。</strong></p>
+<h3 id="3-5-2-TIME类型"><a href="#3-5-2-TIME类型" class="headerlink" title="3.5.2 TIME类型"></a>3.5.2 TIME类型</h3><p>TIME类型用于表示时间值，它的显示形式一般为HH:MM:SS，其中，HH表示小时， MM表示分,SS表示秒。在MySQL中，可以使用以下3种格式指定TIME类型的值。<br>1、以’D HH:MM:SS’字符串格式表示。其中，D表示日可取0—34之间的值, 插人数据时，小时的值等于(DX24+HH)。例如，输入’2 11:30:50’插人数据库中的日期为59:30:50。<br>2、以’HHMMSS’字符串格式或者HHMMSS数字格式表示。 例如，输人’115454’或115454,插入数据库中的日期为11:54:54<br>3、使用CURRENT_TIME或NOW()输人当前系统时间。</p>
+<h3 id="3-5-3-DATETIME类型"><a href="#3-5-3-DATETIME类型" class="headerlink" title="3.5.3 DATETIME类型"></a>3.5.3 DATETIME类型</h3><p>DATETIME类型用于表示日期和时间，它的显示形式为’YYYY-MM-DD HH: MM:SS’，其中，YYYY表示年，MM表示月，DD表示日，HH表示小时，MM表示分，SS 表示秒。在MySQL中，可以使用以下4种格式指定DATETIME类型的值。<br>以’YYYY-MM-DD HH:MM:SS’或者’YYYYMMDDHHMMSS’字符串格式表示的日期和时间，取值范围为’1000-01-01 00:00:00’—‘9999-12-3 23:59:59’。例如，输人’2019-01-22 09:01:23’或 ‘20140122_0_90123’插人数据库中的 DATETIME 值都为 2019-01-22 09:01:23。<br>1、以’YY-MM-DD HH:MM:SS’或者’YYMMDDHHMMSS’字符串格式表示的日期和时间，其中YY表示年，取值范围为’00’—‘99’。与DATE类型中的YY相同，‘00’— ‘69’范围的值会被转换为2000—2069范围的值，‘70’—‘99’范围的值会被转换为1970—1999范围的值。<br>2、以YYYYMMDDHHMMSS或者YYMMDDHHMMSS数字格式表示的日期 和时间。例如，插入20190122090123或者190122090123,插人数据库中的DATETIME值都 为 2019-01-22 09:01:23。<br>3、使用NOW来输人当前系统的日期和时间。</p>
+<h3 id="3-5-4-TIMESTAMP类型"><a href="#3-5-4-TIMESTAMP类型" class="headerlink" title="3.5.4 TIMESTAMP类型"></a>3.5.4 TIMESTAMP类型</h3><p>TIMESTAMP类型用于表示日期和时间，它的显示形式与DATETIME相同但取值范围比DATETIME小。在此，介绍几种TIMESTAMP类型与DATATIME类型不同的形式：<br>1、使用CURRENT_TIMESTAMP输人系统当前日期和时间。<br>2、输人NULL时系统会输人系统当前日期和时间。<br>3、无任何输人时系统会输入系统当前日期和时间。</p>
+<h2 id="3-6-二进制类型"><a href="#3-6-二进制类型" class="headerlink" title="3.6 二进制类型"></a>3.6 二进制类型</h2><p>在MySQL中常用BLOB存储二进制类型的数据，例如：图片、PDF文档等。BLOB类型分为如下四种：</p>
+<table>
+<thead>
+<tr>
+<th>数据类型</th>
+<th>存储范围</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>TINYBLOB</td>
+<td>0~255字节</td>
+</tr>
+<tr>
+<td>BLOB</td>
+<td>0~65535字节</td>
+</tr>
+<tr>
+<td>MEDIUMBLOB</td>
+<td>0~16777215字节</td>
+</tr>
+<tr>
+<td>LONGBLOB</td>
+<td>0~4294967295字节</td>
+</tr>
+</tbody></table>
+<h1 id="4-数据库、数据表的基本操作"><a href="#4-数据库、数据表的基本操作" class="headerlink" title="4. 数据库、数据表的基本操作"></a>4. 数据库、数据表的基本操作</h1><h2 id="4-1-数据库的基本操作"><a href="#4-1-数据库的基本操作" class="headerlink" title="4.1 数据库的基本操作"></a>4.1 数据库的基本操作</h2><pre><code class="sql">mysql -uroot -p -- 连接数据库
+update mysql.user set authentication_string=password(&#39;123456&#39;) where user=&#39;root&#39; and Host = &#39;localhost&#39;; -- 修改用户密码
+flush privileges; -- 刷新权限
+-- 所有语句使用;结尾
+-----------------------------------
+create database db1; -- 创建一个名为db1的数据库
+create database if not exists db1; -- 如果不存在db1数据库就创建
+drop database db1; -- 删除db1数据库
+drop database if exists db1; -- 如果存在就删除
+show databases; --查看所有的数据库
+use school; -- 切换数据库 use 数据库名
+show tables; -- 查看数据库中所有的表
+alter database db1 character set gbk; -- 将数据库字符集修改为gbk MySQL命令
+select database(); -- 查看当前使用的数据库
+</code></pre>
+<h2 id="4-2-数据表的基本操作"><a href="#4-2-数据表的基本操作" class="headerlink" title="4.2 数据表的基本操作"></a>4.2 数据表的基本操作</h2><h3 id="4-2-1-创建数据表"><a href="#4-2-1-创建数据表" class="headerlink" title="4.2.1 创建数据表"></a>4.2.1 创建数据表</h3><pre><code class="sql">-- 简单版：
+create table 表名(
+         字段1 字段类型,
+         字段2 字段类型,
+         …
+         字段n 字段类型
+);
+
+-------------------- 示例1
+ create table student(
+ id int,
+ name varchar(20),
+ gender varchar(10),
+ birthday date
+ );
+ 
+ -- 完整版：
+ -- 格式：
+ CREATE TABLE IF NOT EXISTS `student`(
+    &#39;字段名&#39; 列类型 [属性] [索引] [注释],
+    &#39;字段名&#39; 列类型 [属性] [索引] [注释],
+    ......
+    &#39;字段名&#39; 列类型 [属性] [索引] [注释]
+)[表的类型][字符集设置][注释]
+ 
+ ------------------ 示例2
+ CREATE TABLE IF NOT EXISTS `student`(
+    `id` INT(4)	NOT NULL AUTO_INCREMENT COMMENT &#39;学号&#39;,
+    `name` VARCHAR(30) NOT NULL DEFAULT &#39;匿名&#39; COMMENT &#39;姓名&#39;,
+    `pwd` VARCHAR(20) NOT NULL DEFAULT &#39;123456&#39; COMMENT &#39;密码&#39;,
+    `sex` VARCHAR(2) NOT NULL DEFAULT &#39;女&#39; COMMENT &#39;性别&#39;,
+    `birthday` DATETIME DEFAULT NULL COMMENT &#39;出生日期&#39;,
+    `address` VARCHAR(100) DEFAULT NULL COMMENT &#39;家庭住址&#39;,
+    `email` VARCHAR(50) DEFAULT NULL COMMENT &#39;邮箱&#39;,
+    PRIMARY KEY (`id`)
+)ENGINE=INNODB DEFAULT CHARSET=utf8
+
+</code></pre>
+<ul>
+<li><p>MySQL数据表以文件的方式存放在磁盘中</p>
+<ul>
+<li>包括表文件，数据文件，以及数据库的选项文件</li>
+<li>位置：MySQL安装目录\data\</li>
+</ul>
+<p><img src="http://zy.zlimilz.cn/image-20220831112456894.png" alt="image-20220831112456894"></p>
+</li>
+<li><p>MySQL在文件引擎上的区别：</p>
+<ul>
+<li>INNODB数据库文件类型就包括‘.frm’、’.ibd’以及在上一级目录的ibdata1文件</li>
+<li>MYISAM存储引擎，数据库文件类型就包括<ul>
+<li>.frm：表结构定义文件</li>
+<li>.MYD：数据文件</li>
+<li>.MYI：索引文件</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="4-2-2-查看数据表"><a href="#4-2-2-查看数据表" class="headerlink" title="4.2.2 查看数据表"></a>4.2.2 查看数据表</h3><pre><code class="sql">show tables; -- 查看当前数据库中的所有表
+</code></pre>
+<pre><code class="sql">show create table student; -- 查看表的基本信息
+</code></pre>
+<p><img src="http://zy.zlimilz.cn/image-20220830153754345.png" alt="image-20220830153754345"></p>
+<pre><code class="sql">desc student; -- 查看表中的字段信息
+</code></pre>
+<p><img src="http://zy.zlimilz.cn/image-20220830154039454.png" alt="image-20220830154039454"></p>
+<h3 id="4-2-3-修改数据表"><a href="#4-2-3-修改数据表" class="headerlink" title="4.2.3 修改数据表"></a>4.2.3 修改数据表</h3><p>使用 <strong>alter table</strong> 修改数据表</p>
+<pre><code class="sql">alter table student rename to stu; -- 将表student的名字修改为stu
+alter table stu change name sname varchar(10); -- 将字段name名称修改为sname
+alter table stu modify sname int; -- 修改sname的字段数据类型
+alter table stu add address varchar(50); -- 增加address字段
+alter table stu drop address; -- 删除address字段
+drop table 表名; -- 删除数据表
+</code></pre>
+<h2 id="4-3-数据库的字段属性"><a href="#4-3-数据库的字段属性" class="headerlink" title="4.3 数据库的字段属性"></a>4.3 数据库的字段属性</h2><p><strong>UnSigned：</strong></p>
+<ul>
+<li>无符号的</li>
+<li>声明了该列不能为负数</li>
+</ul>
+<p><strong>ZEROFILL：</strong></p>
+<ul>
+<li>0填充的</li>
+<li>不足位数的用0来填充，如int(3),5则为005</li>
+</ul>
+<p><strong>Auto_InCrement:</strong></p>
+<ul>
+<li>通常理解为自增，自动在上一条记录的基础上默认+1</li>
+<li>通常用来设计唯一的主键，必须是整数类型</li>
+<li>可定义起始值和步长<ul>
+<li>当前表设置步长（AUTO_INCREMENT&#x3D;100）：只影响当前表</li>
+<li>SET @@auto_increment_increment&#x3D;5 ; 影响所有使用自增的表(全局)</li>
+</ul>
+</li>
+</ul>
+<p><strong>NULL和NOT NULL:</strong></p>
+<ul>
+<li>默认为NULL，即没有插入该列的数值</li>
+<li>如果设置了NOT NULL，则该列必须要有值</li>
+</ul>
+<p><strong>DEFAULT：</strong></p>
+<ul>
+<li>默认的</li>
+<li>用于设置默认值</li>
+<li>例如,性别字段,默认为”男” , 否则为 “女” ; 若无指定该列的值 , 则默认值为”男”的值</li>
+</ul>
+<p><strong>拓展：</strong></p>
+<p>每一个表都应存在以下五个字段：</p>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>id</td>
+<td>主键</td>
+</tr>
+<tr>
+<td>version</td>
+<td>乐观锁</td>
+</tr>
+<tr>
+<td>is_delete</td>
+<td>伪删除</td>
+</tr>
+<tr>
+<td>gmt_create</td>
+<td>创建时间</td>
+</tr>
+<tr>
+<td>gmt_update</td>
+<td>修改时间</td>
+</tr>
+</tbody></table>
+<h1 id="5-数据表的约束"><a href="#5-数据表的约束" class="headerlink" title="5. 数据表的约束"></a>5. 数据表的约束</h1><p>为了防止错误的数据被插入到数据表，MySQL中定义了一些维护数据库完整型的规则，这些规则常称为表的约束。</p>
+<p><strong>常见的约束：</strong></p>
+<ul>
+<li>PRIMARY KEY：主键约束用于唯一标识对应的记录</li>
+<li>FOREIGN KEY：外键约束</li>
+<li>NOT NULL：非空约束</li>
+<li>UNIQUE：唯一性约束</li>
+<li>DEFAULT：默认值约束，用于设置字段的默认值</li>
+</ul>
+<p><strong>为什么要给表中添加约束？</strong></p>
+<ul>
+<li>这五种约束条件针对表中的字段进行限制从而保证数据表中的数据的<strong>正确性</strong>、<strong>唯一性</strong>、<strong>有效性</strong>、<strong>完整性</strong>。人话版就是<strong>表的约束实际上就是表中数据的限制条件</strong>。</li>
+</ul>
+<h2 id="5-1-主键约束"><a href="#5-1-主键约束" class="headerlink" title="5.1 主键约束"></a>5.1 主键约束</h2><p>主键约束primary key相当于唯一的标识表中的每一行。被标识为主键的数据在表中是<strong>唯一的且值不能为空</strong>。相当于人的身份证号。</p>
+<p>设置主键的第一种方式：</p>
+<pre><code class="sql">-- 字段名 数据类型 primary key;
+create table if not exists `student`(
+    `id` int primary key AUTO_INCREMENT, -- 主键自动增长， AUTO_INCREMENT,自动增长从1开始
+    `name` varchar(20)    
+);
+</code></pre>
+<p>设置主键的第二种方式：</p>
+<pre><code class="sql">create table if not exists `student`(
+    `id` int,
+    `name` varchar(20),
+    primary key(`id`)
+);
+</code></pre>
+<p>设置主键的第三种方式：</p>
+<pre><code class="sql">-- 在创建表之后添加主键
+create table if not exists `student` (
+    `id` int,
+    `name` varchar(20)
+);
+
+alter table `student` modify `id` int primary key;
+</code></pre>
+<p>删除主键的方式</p>
+<pre><code class="sql">alter table student drop primary key;
+</code></pre>
+<p>定义联合主键：</p>
+<pre><code class="sql">create table if not exists `student`(
+    `id` int,
+    `name` varchar(20),
+    primary key(id, name)
+);
+</code></pre>
+<h2 id="5-2-非空约束"><a href="#5-2-非空约束" class="headerlink" title="5.2 非空约束"></a>5.2 非空约束</h2><p>非空约束即 NOT NULL指的是<strong>字段的值不能为空</strong>。</p>
+<pre><code class="sql">-- 字段名 数据类型 NOT NULL;
+create table if not exists `student`(
+    `id` int,
+    `name` varchar(20) not null
+);
+</code></pre>
+<h2 id="5-3-默认值约束"><a href="#5-3-默认值约束" class="headerlink" title="5.3 默认值约束"></a>5.3 默认值约束</h2><p>默认值约束即DEFAULT用于给数据表中的字段指定默认值，即<strong>当在表中插入一条新记录时若未给该字段赋值，那么，数据库系统会自动为这个字段插人默认值。</strong></p>
+<pre><code class="sql">-- 字段名 数据类型 DEFAULT 默认值；
+create table if not exists `student`(
+    `id` int,
+    `name` varchar(20),
+    `pwd` varchar(20) default &#39;123&#39;
+);
+</code></pre>
+<h2 id="5-4-唯一值约束"><a href="#5-4-唯一值约束" class="headerlink" title="5.4 唯一值约束"></a>5.4 唯一值约束</h2><p>唯一性约束即UNIQUE用于保证数据表中字段的唯一性，即表中<strong>字段的值不能重复出现</strong>。</p>
+<pre><code class="sql">-- 字段名 数据类型 UNIQUE;
+create table if not exists `student`(
+    `id` int,
+    `name` varchar(20) unique,
+    `pwd` varchar(20)
+);
+</code></pre>
+<h2 id="5-5-外键约束"><a href="#5-5-外键约束" class="headerlink" title="5.5 外键约束"></a>5.5 外键约束</h2><p>外键约束即FOREIGN KEY常用于多张表之间的约束。</p>
+<pre><code class="sql">-- 在创建数据表时语法如下：
+CONSTRAINT 外键名 FOREIGN KEY (从表外键字段) REFERENCES 主表 (主键字段)
+-- 将创建数据表创号后语法如下：
+ALTER TABLE 从表名 ADD CONSTRAINT 外键名 FOREIGN KEY (从表外键字段) REFERENCES 主表 (主键字段);
+</code></pre>
+<p><strong>注意：从表（子表）是以主表（父表）的主键为外键（FORFIGN KEY）的表，简单来说就是从表（子表）才有外键。</strong></p>
+<pre><code class="sql">-- 创建一个学生表
+create table if not exists `student`(
+`id` int primary key,
+`name` varchar(20)
+);
+
+-- 创建一个班级表
+create table if not exists `class`(
+`classid` int primary key,
+`studentid` int
+);
+
+-- 学生表作为主表，班级表作为从表设置外键 
+alter table `class` add constraint `fk_class_studentid` foreign key(`studentid`) references `student`(`id`);
+</code></pre>
+<h3 id="5-5-1-数据一致性概念"><a href="#5-5-1-数据一致性概念" class="headerlink" title="5.5.1 数据一致性概念"></a>5.5.1 数据一致性概念</h3><p>建立外键是为了保证数据的完整性和统一性。</p>
+<h3 id="5-5-2-删除外键"><a href="#5-5-2-删除外键" class="headerlink" title="5.5.2 删除外键"></a>5.5.2 删除外键</h3><pre><code class="sql">alter table 从表名 drop foreign key 外键名;
+-- 删除上表外键
+alter table c`class` drop foreign key `fk_class_studentid`;
+</code></pre>
+<h3 id="5-5-3-关于外键约束需要注意的细节"><a href="#5-5-3-关于外键约束需要注意的细节" class="headerlink" title="5.5.3 关于外键约束需要注意的细节"></a>5.5.3 关于外键约束需要注意的细节</h3><ul>
+<li>从表里的外键通常为主表的主键</li>
+<li>从表里外键的数据类型必须与主表中的主键类型一致</li>
+<li>主表发生变化时应注意主表与从表的数据一致性问题</li>
+</ul>
+<h1 id="6-数据表插入数据"><a href="#6-数据表插入数据" class="headerlink" title="6. 数据表插入数据"></a>6. 数据表插入数据</h1><p>一张学生表</p>
+<pre><code class="sql">create table if not exists `student`(
+`id` int,
+`name` varchar(30),
+`age` int,
+`gender` varchar(30)    
+);
+</code></pre>
+<h2 id="6-1-为表中所有字段插入数据"><a href="#6-1-为表中所有字段插入数据" class="headerlink" title="6.1 为表中所有字段插入数据"></a>6.1 为表中所有字段插入数据</h2><p>字段与值<strong>严格对应</strong>，每个值、值的顺序、值的类型必须与对应的字段相匹配</p>
+<pre><code class="sql">INSERT INTO 表名（字段名1,字段名2,...) VALUES (值 1,值 2,...);
+
+-- 在学生表中插入一条学生信息
+insert into student (id,name,age,gender) values (1,&#39;bob&#39;,16,&#39;male&#39;);
+</code></pre>
+<h2 id="6-2-为表中指定字段插入数据"><a href="#6-2-为表中指定字段插入数据" class="headerlink" title="6.2 为表中指定字段插入数据"></a>6.2 为表中指定字段插入数据</h2><pre><code class="sql">INSERT INTO 表名（字段名1,字段名2,...) VALUES (值 1,值 2,...);
+</code></pre>
+<h2 id="6-3-同时插入多条记录"><a href="#6-3-同时插入多条记录" class="headerlink" title="6.3 同时插入多条记录"></a>6.3 同时插入多条记录</h2><pre><code class="sql">INSERT INTO 表名 [(字段名1,字段名2,...)]VALUES (值 1,值 2,…),(值 1,值 2,…),...;
+
+-- 在学生表中插入多个记录，字段名是可以选择的
+insert into student (id,name,age,gender) values (2,&#39;lucy&#39;,17,&#39;female&#39;),(3,&#39;jack&#39;,19,&#39;male&#39;),(4,&#39;tom&#39;,18,&#39;male&#39;);
+</code></pre>
+<h1 id="7-更新数据"><a href="#7-更新数据" class="headerlink" title="7. 更新数据"></a>7. 更新数据</h1><h2 id="7-1-基本语法"><a href="#7-1-基本语法" class="headerlink" title="7.1 基本语法"></a>7.1 基本语法</h2><pre><code class="sql">UPDATE 表名 SET 字段名1=值1[,字段名2 =值2,…] [WHERE 条件表达式];
+/*在该语法中：字段名1、字段名2…用于指定要更新的字段名称；值1、值 2…用于表示字段的新数据；WHERE 条件表达式 是可选的，它用于指定更新数据需要满足的条件*/
+</code></pre>
+<h2 id="7-2-更新部分数据"><a href="#7-2-更新部分数据" class="headerlink" title="7.2 更新部分数据"></a>7.2 更新部分数据</h2><pre><code class="sql">-- 将name为tom的记录的age设置成20，gender设置成female
+update student set age=20,gender=&#39;female&#39; where name=&#39;tom&#39;;
+</code></pre>
+<h2 id="7-3-更新全部数据"><a href="#7-3-更新全部数据" class="headerlink" title="7.3 更新全部数据"></a>7.3 更新全部数据</h2><pre><code class="sql">-- 将所有记录的age设置为18
+update student set age=18;
+</code></pre>
+<h1 id="8-删除数据"><a href="#8-删除数据" class="headerlink" title="8. 删除数据"></a>8. 删除数据</h1><h2 id="8-1-DELETE基本语法"><a href="#8-1-DELETE基本语法" class="headerlink" title="8.1 DELETE基本语法"></a>8.1 DELETE基本语法</h2><pre><code class="sql">DELETE FROM 表名 [WHERE 条件表达式];
+</code></pre>
+<h2 id="8-2-DELETE删除部分数据"><a href="#8-2-DELETE删除部分数据" class="headerlink" title="8.2 DELETE删除部分数据"></a>8.2 DELETE删除部分数据</h2><pre><code class="sql">delete from student where age=14;
+</code></pre>
+<h2 id="8-3-删除全部数据"><a href="#8-3-删除全部数据" class="headerlink" title="8.3 删除全部数据"></a>8.3 删除全部数据</h2><pre><code class="sql">-- 删除student表中的全部数据
+delete from student;
+</code></pre>
+<h2 id="8-4-TRUNCATE-和-DELETE的区别"><a href="#8-4-TRUNCATE-和-DELETE的区别" class="headerlink" title="8.4 TRUNCATE 和 DELETE的区别"></a>8.4 TRUNCATE 和 DELETE的区别</h2><ul>
+<li>DELETE语句后可跟WHERE子句，可通过指定WHERE子句中的条件表达式只删除满足条件的部分记录；但是，TRUNCATE语句只能用于删除表中的所有记录。</li>
+<li>使用TRUNCATE语句删除表中的数据后，再次向表中添加记录时自动增加字段的默认初始值重新由1开始；使用DELETE语句删除表中所有记录后，再次向表中添加记录时自动增加字段的值为删除时该字段的最大值加1</li>
+<li>DELETE语句是DML语句，TRUNCATE语句通常被认为是DDL语句</li>
+</ul>
+<h1 id="9-MySQL数据表简单查询"><a href="#9-MySQL数据表简单查询" class="headerlink" title="9. MySQL数据表简单查询"></a>9. MySQL数据表简单查询</h1><h2 id="9-1-简单查询概述"><a href="#9-1-简单查询概述" class="headerlink" title="9.1 简单查询概述"></a>9.1 简单查询概述</h2><p>简单查询即不含where的select语句。最常用的两种查询：<strong>查询所有字段和查询指定字段</strong>。</p>
+<h2 id="9-2-查询所有字段（方法不唯一）"><a href="#9-2-查询所有字段（方法不唯一）" class="headerlink" title="9.2 查询所有字段（方法不唯一）"></a>9.2 查询所有字段（方法不唯一）</h2><pre><code class="sql">select * from student;
+</code></pre>
+<h2 id="9-3-查询指定字段"><a href="#9-3-查询指定字段" class="headerlink" title="9.3 查询指定字段"></a>9.3 查询指定字段</h2><pre><code class="sql">select sid,sname from student;
+</code></pre>
+<h2 id="9-4-常数的查询"><a href="#9-4-常数的查询" class="headerlink" title="9.4 常数的查询"></a>9.4 常数的查询</h2><pre><code class="sql">select sid,sname,&#39;2021-03-02&#39; from student;
+</code></pre>
+<h2 id="9-5-从查询结果中过滤重复的数据"><a href="#9-5-从查询结果中过滤重复的数据" class="headerlink" title="9.5 从查询结果中过滤重复的数据"></a>9.5 从查询结果中过滤重复的数据</h2><p>在使用DISTINCT 时需要注意：<br><strong>在SELECT查询语句中DISTINCT关键字只能用在第一个所查列名之前。</strong></p>
+<pre><code class="sql">select distinct gender from student;
+</code></pre>
+<h2 id="9-6-算术运算符"><a href="#9-6-算术运算符" class="headerlink" title="9.6 算术运算符"></a>9.6 算术运算符</h2><p>在SELECT查询语句中还可以使用加减乘除运算符。</p>
+<pre><code class="sql">-- 查询学生10年后的年龄
+select sname,age+10 from student;
+</code></pre>
+<h1 id="10-函数"><a href="#10-函数" class="headerlink" title="10. 函数"></a>10. 函数</h1><pre><code class="sql">-- 一张学生表
+CREATE TABLE if not exists`student` (
+    `sid` CHAR(6),
+    `sname` VARCHAR(50),
+    `age` INT,
+    `gender` VARCHAR(50) DEFAULT &#39;male&#39;
+);
+
+-- 插入数据略
+</code></pre>
+<h2 id="10-1-聚合函数"><a href="#10-1-聚合函数" class="headerlink" title="10.1 聚合函数"></a>10.1 聚合函数</h2><p><strong>聚合函数使用规则：只有SELECT子句和HAVING子句、ORDER BY子句中能够使用聚合函数。例如WHERE语句中就不能使用聚合函数。</strong></p>
+<h3 id="10-1-1-count"><a href="#10-1-1-count" class="headerlink" title="10.1.1 count()"></a>10.1.1 count()</h3><p>统计表中数据的行数或者统计指定列其值不为NULL的个数</p>
+<pre><code class="sql">-- 查询该表中有多少人
+select count(*) from student;
+</code></pre>
+<h3 id="10-1-2-max"><a href="#10-1-2-max" class="headerlink" title="10.1.2 max()"></a>10.1.2 max()</h3><p>计算指定列的最大值，如果指定列是字符串类型则使用字符串排序算法</p>
+<pre><code class="sql">-- 查询表中年龄最大的学生
+select sname,max(age) from student;
+</code></pre>
+<h3 id="10-1-3-min"><a href="#10-1-3-min" class="headerlink" title="10.1.3 min()"></a>10.1.3 min()</h3><p>计算指定列的最小值，如果指定列是字符串类型则使用字符串排序运算</p>
+<pre><code class="sql">-- 查询表中年龄最小的学生
+select sname,min(age) from student;
+</code></pre>
+<h3 id="10-1-4-sum"><a href="#10-1-4-sum" class="headerlink" title="10.1.4 sum()"></a>10.1.4 sum()</h3><p>计算指定列的数值和，如果指定列类型不是数值类型则计算结果为0</p>
+<pre><code class="sql">-- 计算表中年龄总和
+select sum(age) from student;
+</code></pre>
+<h3 id="10-1-5-avg"><a href="#10-1-5-avg" class="headerlink" title="10.1.5 avg()"></a>10.1.5 avg()</h3><p>计算指定列的平均值，列值为null的不参与计算</p>
+<pre><code class="sql">-- 计算平均年龄
+select avg(age) from student;
+select round(avg(age),2) from student; -- 保留2位小数
+</code></pre>
+<h2 id="10-2-其他常用函数"><a href="#10-2-其他常用函数" class="headerlink" title="10.2 其他常用函数"></a>10.2 其他常用函数</h2><h3 id="10-2-1-时间函数"><a href="#10-2-1-时间函数" class="headerlink" title="10.2.1 时间函数"></a>10.2.1 时间函数</h3><pre><code class="sql">SELECT NOW();
+SELECT DAY (NOW());
+SELECT DATE (NOW());
+SELECT TIME (NOW());
+SELECT YEAR (NOW());
+SELECT MONTH (NOW());
+SELECT CURRENT_DATE();
+SELECT CURRENT_TIME();
+SELECT CURRENT_TIMESTAMP();
+SELECT ADDTIME(&#39;14:23:12&#39;,&#39;01:02:01&#39;);
+SELECT DATE_ADD(NOW(),INTERVAL 1 DAY);
+SELECT DATE_ADD(NOW(),INTERVAL 1 MONTH);
+SELECT DATE_SUB(NOW(),INTERVAL 1 DAY);
+SELECT DATE_SUB(NOW(),INTERVAL 1 MONTH);
+SELECT DATEDIFF(&#39;2019-07-22&#39;,&#39;2019-05-05&#39;);
+</code></pre>
+<h3 id="10-2-2-字符串函数"><a href="#10-2-2-字符串函数" class="headerlink" title="10.2.2 字符串函数"></a>10.2.2 字符串函数</h3><pre><code class="sql">--连接函数
+SELECT CONCAT ()
+--
+SELECT INSTR ();
+--统计长度
+SELECT LENGTH();
+</code></pre>
+<h3 id="10-2-3-数学函数"><a href="#10-2-3-数学函数" class="headerlink" title="10.2.3 数学函数"></a>10.2.3 数学函数</h3><pre><code class="sql">-- 绝对值
+SELECT ABS(-136);
+-- 向下取整
+SELECT FLOOR(3.14);
+-- 向上取整
+SELECT CEILING(3.14);
+</code></pre>
+<h2 id="10-3-自定义函数"><a href="#10-3-自定义函数" class="headerlink" title="10.3 自定义函数"></a>10.3 自定义函数</h2><p><strong>自定义函数的作用：</strong></p>
+<ul>
+<li>提高SQL语句的重用性，共享性和可移植性</li>
+<li>减少重复代码的编写，提高程序的可读性</li>
+<li>能够实现较快的执行速度，减少网络流量，提高程序编译和运行效率</li>
+</ul>
+<p><strong>语法：</strong></p>
+<pre><code class="sql"> CREATE  FUNCTION  函数名（
+    变量名称 类型，
+    变量名称 类型
+ ）
+ RETURNS 类型
+ BEGIN 
+     -- 声明语句（要完成的功能逻辑）
+ RETURN 变量
+ END;
+
+-- 不带参数函数
+--如果存在删除该函数
+DROP FUNCTION IF EXISTS getCount; 
+--定义函数
+CREATE  FUNCTION getCount()
+RETURNS INT --返回值类型
+BEGIN
+    RETURN (SELECT COUNT(*) FROM 表名);
+END;
+
+
+-- 带参函数
+DROP FUNCTION IF EXIST getAge;
+CREATE FUNCTION getAge()
+RETURNS INT
+BEGIN 
+    DECLARE age INT --定义变量
+    SET age = (SELECT age from person where person.id=id)
+    IF(ISNULL(age)) THEN -- 查询结果不存在
+        RETURN 0;
+    ELSE
+        RETURN age;
+    END IF
+END; 	
+</code></pre>
+<h2 id="10-4-数据库级别的MD5加密（了解）"><a href="#10-4-数据库级别的MD5加密（了解）" class="headerlink" title="10.4 数据库级别的MD5加密（了解）"></a>10.4 数据库级别的MD5加密（了解）</h2><p>MD5消息摘要算法，属Hash算法一类。MD5算法对输入任意长度的消息进行运行，产生一个128位的消息摘要(32位的数字字母混合码)。</p>
+<p><strong>主要特点：不可逆，相同数据的MD5值肯定一样，不同数据的MD5值不一样</strong></p>
+<h1 id="11-条件查询"><a href="#11-条件查询" class="headerlink" title="11. 条件查询"></a>11. 条件查询</h1><ul>
+<li>where &gt; group by &gt; order by</li>
+</ul>
+<pre><code class="sql">select 分组字段/聚合函数
+from 表 名
+[where 条件]
+group by 分组列名 [having 条件]
+[order by 排序字段]
+</code></pre>
+<p>我们可在查询语句中通过<strong>WHERE子句指定查询条件</strong>对查询结果进行过滤。</p>
+<pre><code class="sql">-- 一张学生表
+CREATE TABLE if not exists`student` (
+    `sid` CHAR(6),
+    `sname` VARCHAR(50),
+    `age` INT,
+    `gender` VARCHAR(50) DEFAULT &#39;male&#39;
+);
+
+-- 插入数据略
+</code></pre>
+<h2 id="11-1-使用关系运算查询"><a href="#11-1-使用关系运算查询" class="headerlink" title="11.1 使用关系运算查询"></a>11.1 使用关系运算查询</h2><p>&#x3D;，&gt;, &lt;等等</p>
+<pre><code class="sql">-- 查询年龄大于18岁的学生信息
+select * from student where age &gt; 18;
+</code></pre>
+<h2 id="11-2-使用IN关键字查询"><a href="#11-2-使用IN关键字查询" class="headerlink" title="11.2 使用IN关键字查询"></a>11.2 使用IN关键字查询</h2><p>IN关键字用于<strong>判断某个字段的值是否在指定集合中</strong>。如果字段的值恰好在指定的集合中，则将字段所在的记录将査询出来。</p>
+<pre><code class="sql">-- 查询sid在s_1002到s_1005之间的学生信息
+select * from student where sid in (&#39;S_1002&#39;,&#39;S_1005&#39;);
+
+-- 查询sid为s_1002之外的学生
+select * from student where sit not in (&#39;s_1002&#39;);
+</code></pre>
+<h2 id="11-3-使用BETWEEN-AND关键字查询"><a href="#11-3-使用BETWEEN-AND关键字查询" class="headerlink" title="11.3 使用BETWEEN AND关键字查询"></a>11.3 使用BETWEEN AND关键字查询</h2><p>BETWEEN AND用于判断某个字段的值是否在指定的范围之内。如果字段的值在指定范围内，则将所在的记录将查询出来</p>
+<pre><code class="sql">-- 查询15-18岁之间的学生信息
+select * from student where age between 15 and 18;
+
+-- 查询不在15-18岁之间的学生信息
+select * from student where age not between 15 and 18;
+</code></pre>
+<h2 id="11-4-使用控制查询"><a href="#11-4-使用控制查询" class="headerlink" title="11.4 使用控制查询"></a>11.4 使用控制查询</h2><p>使用 IS NULL判断字段是否为空值。<strong>空值NULL不同于0，也不同于空字符串</strong></p>
+<pre><code class="sql">-- 查询sname部位空值的学生信息
+select * from student where sname is not null;
+</code></pre>
+<h2 id="11-5-使用AND关键字查询"><a href="#11-5-使用AND关键字查询" class="headerlink" title="11.5 使用AND关键字查询"></a>11.5 使用AND关键字查询</h2><p>AND可以连接两个或者多个查询条件</p>
+<pre><code class="sql">-- 查询年纪大于15且性别为male的学生信息
+select * from student where age&gt;15 and gender=&#39;male&#39;;
+</code></pre>
+<h2 id="11-6-OR关键字查询"><a href="#11-6-OR关键字查询" class="headerlink" title="11.6 OR关键字查询"></a>11.6 OR关键字查询</h2><p>OR关键字可以连接多个查询条件，只要记录满足其中任意一个条件就会被查询出来</p>
+<pre><code class="sql">-- 查询年纪大于15或者性别为male的学生信息
+select * from student where age&gt;15 or gender=&#39;male&#39;;
+</code></pre>
+<h2 id="11-7-使用LIKE关键字查询"><a href="#11-7-使用LIKE关键字查询" class="headerlink" title="11.7 使用LIKE关键字查询"></a>11.7 使用LIKE关键字查询</h2><p>LIKE关键字可以<strong>判断两个字符串是否相匹配</strong></p>
+<h3 id="11-7-1-普通字符串"><a href="#11-7-1-普通字符串" class="headerlink" title="11.7.1 普通字符串"></a>11.7.1 普通字符串</h3><pre><code class="sql">-- 查询sname中与wang匹配的学生信息
+select * from student where sname like &#39;wang&#39;;
+</code></pre>
+<h3 id="11-7-2-含有-通配的字符串"><a href="#11-7-2-含有-通配的字符串" class="headerlink" title="11.7.2 含有%通配的字符串"></a>11.7.2 含有%通配的字符串</h3><p><strong>%用于匹配任意长度的字符串。</strong>例如，字符串“a%”匹配以字符a开始任意长度的字符串，afdafea</p>
+<pre><code class="sql">-- 查询学生姓名以li开始的记录
+select * from student where sname like &#39;li%&#39;;
+
+-- 查询学生姓名以g结尾的记录
+select * from student where sname like &#39;%g&#39;;
+
+-- 查询学生姓名包含s的记录
+select * from student where sname like &#39;%s%&#39;;
+</code></pre>
+<h3 id="11-7-3-使用含有-通配的字符串"><a href="#11-7-3-使用含有-通配的字符串" class="headerlink" title="11.7.3 使用含有_通配的字符串"></a>11.7.3 使用含有_通配的字符串</h3><p>下划线通配符<strong>只匹配单个字符</strong>，如果要匹配多个字符，需要连续使用多个下划线通配符。</p>
+<pre><code class="sql">-- 查询学生姓名以zx开头且长度为4的记录 
+select * from student where sname like &#39;zx__&#39;;
+
+-- 查询学生姓名以g结尾且长度为4的记录
+select * from student where sname like &#39;___g&#39;;
+</code></pre>
+<h2 id="11-8-使用LIMIT限制查询结果的数量"><a href="#11-8-使用LIMIT限制查询结果的数量" class="headerlink" title="11.8 使用LIMIT限制查询结果的数量"></a>11.8 使用LIMIT限制查询结果的数量</h2><p>当执行查询数据时可能会返回很多条记录，而用户需要的数据可能只是其中的一条或者几条</p>
+<pre><code class="sql">-- 查询学生表中年纪最小的3位同学
+select * from student order by age asc limit 3;
+
+-- order by 排序字段;   默认升序（asc），如果存在where语句，必须放在where后面
+</code></pre>
+<h2 id="11-9-使用GROUP-BY进行分组查询"><a href="#11-9-使用GROUP-BY进行分组查询" class="headerlink" title="11.9 使用GROUP BY进行分组查询"></a>11.9 使用GROUP BY进行分组查询</h2><pre><code class="sql">select 分组字段/聚合函数
+from 表 名
+[where 条件]
+group by 分组列名 [having 条件]
+[order by 排序字段]
+</code></pre>
+<ul>
+<li><code>select</code>后使⽤ * 显示对查询的结果进⾏分组之后，显示每组的第⼀条记录（这种显示通常是⽆意义的）</li>
+<li><code>select</code> 后通常显示分组字段和聚合函数(对分组后的数据进⾏统计、求和、平均值等) </li>
+<li>语句执行属性<ul>
+<li>先根据where条件从数据库查询记录</li>
+<li>group by对查询记录进⾏分组 </li>
+<li>执⾏having对分组后的数据进⾏筛选</li>
+</ul>
+</li>
+</ul>
+<p>GROUP BY 子句可像切蛋糕一样将表中的数据进行分组，再进行查询等操作。换言之，可通俗地理解为：通过GROUP BY将原来的表拆分成了几张小表。</p>
+<pre><code class="sql">-- 一张员工表
+CREATE TABLE if not exists `employee` (
+    `id` int,
+    `name` varchar(50),
+    `salary` int,
+    `departmentnumber` int
+);
+</code></pre>
+<h3 id="11-9-1-ORDER-BY和聚合函数一起使用"><a href="#11-9-1-ORDER-BY和聚合函数一起使用" class="headerlink" title="11.9.1 ORDER BY和聚合函数一起使用"></a>11.9.1 ORDER BY和聚合函数一起使用</h3><pre><code class="sql">-- 统计各个部门员工个数
+select count(*), departmentnumber from employee group by departmentnumber;
+
+-- 统计部门编号大于1001的各部门员工个数 
+select count(*), departmentnumber from employee where departmentnumber&gt;1001 group by departmentnumber;
+</code></pre>
+<h3 id="11-9-2-GROUP-BY和聚合函数以及HAVING一起使用"><a href="#11-9-2-GROUP-BY和聚合函数以及HAVING一起使用" class="headerlink" title="11.9.2 GROUP BY和聚合函数以及HAVING一起使用"></a>11.9.2 GROUP BY和聚合函数以及HAVING一起使用</h3><pre><code class="sql">-- 统计工资总和大于8000的部门
+select sum(salary),departmentnumber from employee group by departmentnumber having sum(salary)&gt;8000;
+</code></pre>
+<h2 id="11-10-使用ORDER-BY对查询结果排序"><a href="#11-10-使用ORDER-BY对查询结果排序" class="headerlink" title="11.10 使用ORDER BY对查询结果排序"></a>11.10 使用ORDER BY对查询结果排序</h2><p><strong>基本格式：</strong></p>
+<pre><code class="sql">SELECT 字段名1,字段名2,…
+FROM 表名
+ORDER BY 字段名1 [ASC 丨 DESC],字段名2 [ASC | DESC];
+
+/*字段名1、字段名2是查询结果排序的依据；参数 ASC表示按照升序排序，DESC表示按照降序排序；默认情况下，按照ASC方式排序。通常情况下，ORDER BY子句位于整个SELECT语句的末尾。*/
+</code></pre>
+<pre><code class="sql">-- 查询所有学生并按照年纪大小升序排列 
+select * from student order by age asc;
+
+-- 查询所有学生并按照年纪大小降序排列
+select * from student order by age desc;
+</code></pre>
+<h2 id="11-11-分页查询-limit"><a href="#11-11-分页查询-limit" class="headerlink" title="11.11 分页查询 limit"></a>11.11 分页查询 limit</h2><pre><code class="sql">select ...
+from ...
+where ...
+limit param1,param2
+</code></pre>
+<ul>
+<li>parrm1：查询的第一条信息的索引，也就是这一页显示的第一条记录</li>
+<li>param2：获取记录的条数，也就是每页显示几条</li>
+</ul>
+<pre><code class="sql">SELECT * FROM smbms_user LIMIT 0,3;
+SELECT * FROM smbms_user LIMIT 3,3;
+SELECT * FROM smbms_user LIMIT 6,3;
+SELECT * FROM smbms_user LIMIT 9,3;
+-- 三条记录为一页，前一个参数表示开始的记录
+</code></pre>
+<h1 id="12-取别名"><a href="#12-取别名" class="headerlink" title="12. 取别名"></a>12. 取别名</h1><p>在査询数据时可为表和字段取別名，该别名代替表和字段的原名参与查询操作。</p>
+<h2 id="12-1-为表取别名"><a href="#12-1-为表取别名" class="headerlink" title="12.1 为表取别名"></a>12.1 为表取别名</h2><pre><code class="sql">SELECT * FROM 表名 [AS] 表的别名 WHERE .... ;
+
+-- 将student改为stu查询整表
+select * from student as stu;
+</code></pre>
+<h2 id="12-2-为字段取别名"><a href="#12-2-为字段取别名" class="headerlink" title="12.2 为字段取别名"></a>12.2 为字段取别名</h2><pre><code class="sql">SELECT 字段名1 [AS] 别名1 , 字段名2 [AS] 别名2 , ... FROM 表名 WHERE ... ;
+
+-- 将student中的name取别名为“姓名” 查询整表
+select name as &#39;姓名&#39;,id from student;
+</code></pre>
+<h1 id="13-表的关联关系"><a href="#13-表的关联关系" class="headerlink" title="13. 表的关联关系"></a>13. 表的关联关系</h1><ul>
+<li><strong>多对一</strong>：多对一(亦称为一对多)是数据表中最常见的一种关系。例如：员工与部门之间的关系，一个部门可以有多个员工；而一个员工不能属于多个部门只属于某个部门。在多对一的表关系 中，应将外键建在多的一方否则会造成数据的冗余。</li>
+<li><strong>多对多</strong>：多对多是数据表中常见的一种关系。例如：学生与老师之间的关系，一个学生可以有多个老师而且一个老师有多个学生。通常情况下，为了实现这种关系需要定义一张中间表(亦称为连接表)该表会存在两个外键分别参照老师表和学生表。</li>
+<li><strong>一对一</strong>：在开发过程中，一对一的关联关系在数据库中并不常见；因为以这种方式存储的信息通常会放在同一张表中。</li>
+</ul>
+<pre><code class="sql">-- 创建班级表
+CREATE TABLE class(
+    cid int(4) NOT NULL PRIMARY KEY,
+    cname varchar(30) 
+);
+
+-- 创建学生表
+CREATE TABLE student(
+    sid int(8) NOT NULL PRIMARY KEY,
+    sname varchar(30),
+    classid int(8) NOT NULL
+);
+
+-- 为学生表添加外键约束
+ALTER TABLE student ADD CONSTRAINT fk_student_classid FOREIGN KEY(classid) REFERENCES class(cid);
+</code></pre>
+<h2 id="13-1-关联查询"><a href="#13-1-关联查询" class="headerlink" title="13.1 关联查询"></a>13.1 关联查询</h2><pre><code class="sql">-- 查询Java班的所有学生
+select * from student where classid=(select cid from class where cname=&#39;Java&#39;);
+</code></pre>
+<h2 id="13-2-关于关联关系的删除数据"><a href="#13-2-关于关联关系的删除数据" class="headerlink" title="13.2 关于关联关系的删除数据"></a>13.2 关于关联关系的删除数据</h2><p>请从班级表中删除Java班级。在此，请注意：班级表和学生表之间存在关联关系；要删除Java班级，应该先删除学生表中与该班相关联的学生。否则，假若先删除Java班那么学生表中的cid就失去了关联</p>
+<pre><code class="sql">-- 删除Java班
+delete from student where classid=(select cid from class where cname=&#39;Java&#39;);
+delete from class where cname=&#39;Java&#39;;
+</code></pre>
+<h1 id="14-多表连接查询"><a href="#14-多表连接查询" class="headerlink" title="14. 多表连接查询"></a>14. 多表连接查询</h1><h2 id="14-1-交叉连接查询"><a href="#14-1-交叉连接查询" class="headerlink" title="14.1 交叉连接查询"></a>14.1 交叉连接查询</h2><p>交叉连接返回的结果是被连接的两个表中所有数据行的笛卡儿积；比如：集合A&#x3D;{a,b}，集合B&#x3D;{0,1,2}，则集合A和B的笛卡尔积为{(a,0),(a,1),(a,2),(b,0),(b,1),(b,2)}。所以，交叉连接也被称为笛卡尔连接</p>
+<pre><code class="sql">SELECT * FROM 表1 CROSS JOIN 表2;
+-- 在该语法中：CROSS JOIN用于连接两个要查询的表，通过该语句可以查询两个表中所有的数据组合。
+</code></pre>
+<h2 id="14-2-内连接查询"><a href="#14-2-内连接查询" class="headerlink" title="14.2 内连接查询"></a>14.2 内连接查询</h2><p>内连接(Inner Join)又称简单连接或自然连接，是一种非常常见的连接查询。内连接使用比较运算符对两个表中的数据进行比较并列出与连接条件匹配的数据行，组合成新的 记录。也就是说在内连接查询中只有满足条件的记录才能出现在查询结果中。</p>
+<ul>
+<li>where和on的区别<ul>
+<li>where先生成笛卡儿积 从笛卡尔积中过滤数据 		效率很低</li>
+<li>on 先判断连接条件是否成立，如果成立就两张表的数据进行组合生成一条结果记录3wa</li>
+</ul>
+</li>
+</ul>
+<pre><code class="sql">SELECT 查询字段1,查询字段2, ... FROM 表1 [INNER] JOIN 表2 ON 表1.关系字段=表2.关系字段
+-- 在该语法中：INNER JOIN用于连接两个表，ON来指定连接条件；其中INNER可以省略。
+</code></pre>
+<pre><code class="sql">-- 创建部门表
+CREATE TABLE department(
+  did int (4) NOT NULL PRIMARY KEY, 
+  dname varchar(20)
+);
+
+-- 创建员工表
+CREATE TABLE employee (
+  eid int (4) NOT NULL PRIMARY KEY, 
+  ename varchar (20), 
+  eage int (2), 
+  departmentid int (4) NOT NULL
+);
+
+
+-- 查询员工姓名及其所属部门名称
+select employee.ename,department.dname from department inner join employee on department.did=employee.departmentid;
+</code></pre>
+<h2 id="14-3-外连接查询"><a href="#14-3-外连接查询" class="headerlink" title="14.3 外连接查询"></a>14.3 外连接查询</h2><p>在使用内连接查询时我们发现：返回的结果只包含符合查询条件和连接条件的数据。但是，有时还需要在返回查询结果中不仅包含符合条件的数据，而且还包括左表、右表或两个表中的所有数据，此时我们就需要使用外连接查询。外连接又分为左(外)连接和右(外)连接。</p>
+<pre><code class="sql">SELECT 查询字段1,查询字段2, ... FROM 表1 LEFT | RIGHT [OUTER] JOIN 表2 ON 表1.关系字段=表2.关系字段 WHERE 条件
+
+/*  
+left|right join 关键字左边的被称为左表，右边的称为右表，outer可以省略
+在使用左(外)连接和右(外)连接查询时，查询结果是不一致的：
+1、LEFT [OUTER] JOIN 左(外)连接：返回包括左表中的所有记录和右表中符合连接条件的记录。
+2、RIGHT [OUTER] JOIN 右(外)连接：返回包括右表中的所有记录和左表中符合连接条件的记录。
+*/
+</code></pre>
+<p><strong>哪边连接就返回哪边的全部记录和另外一边符合条件的记录</strong></p>
+<pre><code class="sql">-- 创建班级表
+CREATE TABLE class(
+  cid int (4) NOT NULL PRIMARY KEY, 
+  cname varchar(20)
+);
+
+-- 创建学生表
+CREATE TABLE student (
+  sid int (4) NOT NULL PRIMARY KEY, 
+  sname varchar (20), 
+  sage int (2), 
+  classid int (4) NOT NULL
+);
+
+-- 向班级表插入数据
+INSERT INTO class VALUES(1001,&#39;Java&#39;);
+INSERT INTO class VALUES(1002,&#39;C++&#39;);
+INSERT INTO class VALUES(1003,&#39;Python&#39;);
+INSERT INTO class VALUES(1004,&#39;PHP&#39;);
+
+-- 向学生表插入数据
+INSERT INTO student VALUES(1,&#39;张三&#39;,20,1001);
+INSERT INTO student VALUES(2,&#39;李四&#39;,21,1002);
+INSERT INTO student VALUES(3,&#39;王五&#39;,24,1002);
+INSERT INTO student VALUES(4,&#39;赵六&#39;,23,1003);
+INSERT INTO student VALUES(5,&#39;Jack&#39;,22,1009);
+</code></pre>
+<h3 id="14-3-1-左（外）连接查询"><a href="#14-3-1-左（外）连接查询" class="headerlink" title="14.3.1 左（外）连接查询"></a>14.3.1 左（外）连接查询</h3><p>左(外)连接的结果包括LEFT JOIN子句中指定的<strong>左表的所有记录</strong>，以及所有满足连接条件的记录。<strong>如果左表的某条记录在右表中不存在则在右表中显示为空。</strong></p>
+<pre><code class="sql">-- 查询每个班的班级ID、班级名称及该班的所有学生的名字
+select class.cid,class.cname,student.sname from class left outer join student on class.cid=student.classid;
+</code></pre>
+<p><img src="http://zy.zlimilz.cn/image-20220902154922900.png" alt="image-20220902154922900"></p>
+<p><strong>左表全部，右表没有对应的故为NULL</strong></p>
+<h3 id="14-3-2-右（外）连接查询"><a href="#14-3-2-右（外）连接查询" class="headerlink" title="14.3.2 右（外）连接查询"></a>14.3.2 右（外）连接查询</h3><p>右(外)连接的结果包括RIGHT JOIN子句中指定的<strong>右表的所有记录</strong>，以及所有满足连接条件的记录。<strong>如果右表的某条记录在左表中没有匹配，则左表将返回空值。</strong></p>
+<pre><code class="sql">-- 查询每个班的班级ID、班级名称及该班的所有学生的名字
+select class.cid,class.cname,student.sname from class right outer join student on class.cid=student.classid;
+</code></pre>
+<p><img src="http://zy.zlimilz.cn/image-20220902155128995.png" alt="image-20220902155128995"></p>
+<h1 id="15-子查询"><a href="#15-子查询" class="headerlink" title="15. 子查询"></a>15. 子查询</h1><p>子查询是指一个查询语句嵌套在另一个查询语句内部的查询；该查询语句可以嵌套在一个 SELECT、SELECT…INTO、INSERT…INTO等语句中。在执行查询时，首先会执行子查询中的语句，再将返回的结果作为外层查询的过滤条件。在子査询中通常可以使用比较运算符和IN、EXISTS、ANY、ALL等关键字。</p>
+<pre><code class="sql">-- 创建班级表
+CREATE TABLE if not exists`class`(
+  `cid` int (4) NOT NULL PRIMARY KEY, 
+  cname varchar(20)
+);
+
+-- 创建学生表
+CREATE TABLE if not exists `student` (
+  `sid` int (4) NOT NULL PRIMARY KEY, 
+  `sname` varchar (20), 
+  `sage` int (2), 
+  `classid` int (4) NOT NULL
+);
+</code></pre>
+<h2 id="15-1-带比较运算符的子查询"><a href="#15-1-带比较运算符的子查询" class="headerlink" title="15.1 带比较运算符的子查询"></a>15.1 带比较运算符的子查询</h2><pre><code class="sql">-- 查询张三同学所在班级的信息 
+select * from class where cid=(select classid from student where sname=&#39;张三&#39;);
+
+-- 查询比张三同学所在班级编号还大的班级的信息
+select * from class where cid&gt;(select classid from student where sname=&#39;张三&#39;);
+</code></pre>
+<h2 id="15-2-带EXISTS关键字的子查询"><a href="#15-2-带EXISTS关键字的子查询" class="headerlink" title="15.2 带EXISTS关键字的子查询"></a>15.2 带EXISTS关键字的子查询</h2><p>EXISTS关键字后面的参数可以是任意一个子查询， 它不产生任何数据只返回TRUE或FALSE。<strong>当返回值为TRUE时外层查询才会 执行</strong></p>
+<pre><code class="sql">-- 假如王五同学在学生表中则从班级表查询所有班级信息
+select * from class where exists (select * from student where sname=&#39;王五&#39;);
+</code></pre>
+<h2 id="15-3-带ANY关键字的子查询"><a href="#15-3-带ANY关键字的子查询" class="headerlink" title="15.3 带ANY关键字的子查询"></a>15.3 带ANY关键字的子查询</h2><p>ANY关键字表示满足其中任意一个条件就返回一个结果作为外层查询条件。</p>
+<pre><code class="sql">-- 查询比任一学生所属班级号还大的班级编号
+select * from class where cid &gt; any (select classid from student);
+</code></pre>
+<h2 id="15-4-带ALL关键字的子查询"><a href="#15-4-带ALL关键字的子查询" class="headerlink" title="15.4 带ALL关键字的子查询"></a>15.4 带ALL关键字的子查询</h2><p>ALL关键字与ANY有点类似，只不过带ALL关键字的子査询返回的结果需<strong>同时满足所有内层査询条件</strong>。</p>
+<pre><code class="sql">-- 查询比所有学生所属班级号还大的班级编号
+select * from class where cid &gt; all (select classid from student);
+</code></pre>
+<h1 id="15-事务"><a href="#15-事务" class="headerlink" title="15. 事务"></a>15. 事务</h1><h2 id="15-1-为什么需要数据库事务"><a href="#15-1-为什么需要数据库事务" class="headerlink" title="15.1 为什么需要数据库事务"></a>15.1 为什么需要数据库事务</h2><p>转账是生活中常见的操作,比如从A账户转账100元到B账号。站在用户角度而言,这是一个逻辑上的单一操作,然而在数据库系统中,至少会分成两个步骤来完成:</p>
+<ul>
+<li>1.将A账户的金额减少100元</li>
+<li>2.将B账户的金额增加100元。</li>
+</ul>
+<p><img src="http://zy.zlimilz.cn/image-20220902161805806.png" alt="image-20220902161805806"></p>
+<p>在这个过程中可能会出现以下问题:</p>
+<ul>
+<li>1.转账操作的第一步执行成功,A账户上的钱减少了100元,但是第二步执行失败或者未执行便发生系统崩溃,导致B账户并没有相应增加100元。</li>
+<li>2.转账操作刚完成就发生系统崩溃,系统重启恢复时丢失了崩溃前的转账记录。</li>
+<li>3.同时又另一个用户转账给B账户,由于同时对B账户进行操作,导致B账户金额出现异常。</li>
+</ul>
+<h2 id="15-2-什么是数据库事务"><a href="#15-2-什么是数据库事务" class="headerlink" title="15.2 什么是数据库事务"></a>15.2 什么是数据库事务</h2><p><strong>定义:数据库事务是构成单一逻辑工作单元的操作集合</strong></p>
+<pre><code class="sql">BEGIN TRANSACTION  //事务开始
+SQL1
+SQL2
+COMMIT/ROLLBACK   //事务提交或回滚
+</code></pre>
+<p><strong>注意点：</strong></p>
+<ul>
+<li>数据库事务可以包含一个或多个数据库操作,但这些操作构成一个逻辑上的整体。</li>
+<li>构成逻辑整体的这些数据库操作,要么全部执行成功,要么全部不执行。</li>
+<li>构成事务的所有操作,要么全都对数据库产生影响,要么全都不产生影响,即不管事务是否执行成功,数据库总能保持一致性状态。</li>
+<li>以上即使在数据库出现故障以及并发事务存在的情况下依然成立。</li>
+</ul>
+<h2 id="15-3-事务如何解决问题"><a href="#15-3-事务如何解决问题" class="headerlink" title="15.3 事务如何解决问题"></a>15.3 事务如何解决问题</h2><p>转账的例子</p>
+<pre><code class="sql">BEGIN TRANSACTION -- 事务开始
+A账户减少100元
+B账户增加100元
+COMMIT/ROLLBACK --事务提交或者回滚
+
+-- MySQL 自动提交
+-- 设置事务为手动提交
+SET @@autocommit=0;
+SELECT @@autocommit;
+SQL1...
+SQL2...
+ROLLBACK;	-- 回滚
+COMMIT;		-- 永久提交
+</code></pre>
+<ul>
+<li>1.当数据库操作失败或者系统出现崩溃,系统能够以事务为边界进行恢复,不会出现A账户金额减少而B账户未增加的情况。</li>
+<li>2.当有多个用户同时操作数据库时,数据库能够以事务为单位进行并发控制,使多个用户对B账户的转账操作相互隔离。</li>
+</ul>
+<p>事务使系统能够更方便的进行故障恢复以及<strong>并发</strong>控制,从而保证数据库状态的一致性。</p>
+<h2 id="15-4-事务的ACID特性以及实现原理"><a href="#15-4-事务的ACID特性以及实现原理" class="headerlink" title="15.4 事务的ACID特性以及实现原理"></a>15.4 事务的ACID特性以及实现原理</h2><ul>
+<li>原子性(Atomicity):事务中的所有操作作为一个整体像原子一样不可分割，要么全部成功,要么全部失败。</li>
+<li>一致性(Consistency):事务的执行结果必须使数据库从一个一致性状态到另一个一致性状态。一致性状态是指:<ul>
+<li>1.系统的状态满足数据的完整性约束(主码,参照完整性,check约束等) </li>
+<li>2.系统的状态反应数据库本应描述的现实世界的真实状态,比如转账前后两个账户的金额总和应该保持不变。</li>
+</ul>
+</li>
+<li>隔离性(Isolation):并发执行的事务不会相互影响,其对数据库的影响和它们串行执行时一样。比如多个用户同时往一个账户转账,最后账户的结果应该和他们按先后次序转账的结果一样。</li>
+<li>持久性(Durability):事务一旦提交,其对数据库的更新就是持久的。任何事务或系统故障都不会导致数据丢失。</li>
+</ul>
+<hr>
+<p>在事务的ACID特性中,C即一致性是事务的根本追求,而对数据一致性的破坏主要来自两个方面</p>
+<ul>
+<li>事务的并发执行</li>
+<li>事务故障或系统故障</li>
+</ul>
+<p>数据库系统是通过<strong>并发控制技术和日志恢复技术</strong>来避免这种情况发生的。</p>
+<p>并发控制技术保证了事务的隔离性,使数据库的一致性状态不会因为并发执行的操作被破坏。<br>日志恢复技术保证了事务的原子性,使一致性状态不会因事务或系统故障被破坏。同时使已提交的对数据库的修改不会因系统崩溃而丢失,保证了事务的持久性。</p>
+<p><img src="http://zy.zlimilz.cn/image-20220902162748626.png" alt="image-20220902162748626"></p>
+<h2 id="15-6-并发异常与并发控制技术"><a href="#15-6-并发异常与并发控制技术" class="headerlink" title="15.6 并发异常与并发控制技术"></a>15.6 并发异常与并发控制技术</h2><p>。。。</p>
+<h2 id="15-7-故障与故障恢复技术"><a href="#15-7-故障与故障恢复技术" class="headerlink" title="15.7  故障与故障恢复技术"></a>15.7  故障与故障恢复技术</h2><p>。。。</p>
+<h1 id="17-索引"><a href="#17-索引" class="headerlink" title="17. 索引"></a>17. 索引</h1><p><a target="_blank" rel="noopener" href="https://blog.codinglabs.org/articles/theory-of-mysql-index.html">https://blog.codinglabs.org/articles/theory-of-mysql-index.html</a></p>
+<p><strong>索引（Index）是帮助MySQL高效获取数据的数据结构。提取句子主干，就可以得到索引的本质：索引是数据结构。</strong></p>
+<p>简单来说，索引就是书本或字典的目录，合理使用可以加快查询效率和提升程序性能。</p>
+<h2 id="17-1-索引的作用与缺点"><a href="#17-1-索引的作用与缺点" class="headerlink" title="17.1 索引的作用与缺点"></a>17.1 索引的作用与缺点</h2><p><strong>作用：</strong></p>
+<ul>
+<li>通过创建索引，可以再查询的过程中，提高系统的性能</li>
+<li>通过创建唯一性索引，可以保持数据库表中每一行数据的唯一性</li>
+<li>在使用分组和排序子句进行数据检索时，可以减少查询中分组和排序的时间</li>
+</ul>
+<p><strong>缺点：</strong></p>
+<ul>
+<li>创建索引和维护索引要耗费时间，而且时间随着数据量的增加而增大</li>
+<li>索引需要占用物理空间，如果要建立聚簇索引，所需要的空间会更大</li>
+<li>在对表中的数据进行增删改时需要耗费较多的时间，因为索引也要动态地维护</li>
+</ul>
+<h2 id="17-2-索引使用的场景"><a href="#17-2-索引使用的场景" class="headerlink" title="17.2 索引使用的场景"></a>17.2 索引使用的场景</h2><p><strong>适用场景：</strong></p>
+<ul>
+<li>经常需要搜索的列上</li>
+<li>作为主键的列上</li>
+<li>经常用在连接的列上，这些列主要是一些外键，可以加快连接的速度</li>
+<li>经常需要根据范围进行搜索的列上</li>
+<li>经常需要排序的列上</li>
+<li>经常使用在where子句上面的列上</li>
+</ul>
+<p><strong>不适用的场景：</strong></p>
+<ul>
+<li>查询中很少用到的列</li>
+<li>对于那些具有很少数据值的列，比如数据表中的性别列，bit数据类型的列</li>
+<li>对于那些定义为text，image的列，因为这些列的数据量相当大</li>
+<li>当对修改性能的要求远远大于搜索性能时，因为当增加索引时，会提高搜索性能，但是会降低修改性能</li>
+</ul>
+<h2 id="17-3-索引的分类和适用说明"><a href="#17-3-索引的分类和适用说明" class="headerlink" title="17.3 索引的分类和适用说明"></a>17.3 索引的分类和适用说明</h2><h3 id="17-3-1-主键索引"><a href="#17-3-1-主键索引" class="headerlink" title="17.3.1 主键索引"></a>17.3.1 主键索引</h3><p>设定为主键后数据库会自动建立索引，innodb为聚簇索引</p>
+<pre><code class="sql">-- 随表一起建索引：
+CREATE TABLE customer (
+    id INT(10) UNSIGNED  AUTO_INCREMENT ,
+    customer_no VARCHAR(200),
+    customer_name VARCHAR(200),
+  PRIMARY KEY(id) 
+);
+-- 使用AUTO_INCREMENT关键字的列必须有索引(只要有索引就行)。
+CREATE TABLE customer2 (
+    id INT(10) UNSIGNED,
+    customer_no VARCHAR(200),
+    customer_name VARCHAR(200),
+  PRIMARY KEY(id) 
+);
+-- 单独建主键索引：
+ALTER TABLE customer add PRIMARY KEY customer(customer_no);  
+--删除建主键索引：
+ALTER TABLE customer drop PRIMARY KEY ;  
+-- 修改建主键索引：
+-- 必须先删除掉(drop)原索引，再新建(add)索引
+</code></pre>
+<h3 id="17-3-2-单列索引"><a href="#17-3-2-单列索引" class="headerlink" title="17.3.2 单列索引"></a>17.3.2 单列索引</h3><p>一个索引只包含单个列，一个表可以有多个单列索引</p>
+<pre><code class="sql">-- 随表一起建索引：
+CREATE TABLE customer (
+    id INT(10) UNSIGNED  AUTO_INCREMENT ,
+    customer_no VARCHAR(200),
+    customer_name VARCHAR(200),
+  PRIMARY KEY(id),
+  KEY (customer_name)  
+);
+-- 随表一起建立的索引 索引名同 列名(customer_name)
+-- 单独建单值索引：
+CREATE INDEX idx_customer_name ON customer(customer_name); 
+-- 删除索引：
+DROP INDEX idx_customer_name ;
+</code></pre>
+<h3 id="17-3-3-唯一索引"><a href="#17-3-3-唯一索引" class="headerlink" title="17.3.3 唯一索引"></a>17.3.3 唯一索引</h3><p>索引列的值必须唯一，但允许有空值，比如身份证号</p>
+<pre><code class="sql">-- 随表一起建索引：
+CREATE TABLE customer (
+    id INT(10) UNSIGNED  AUTO_INCREMENT ,
+    customer_no VARCHAR(200),
+    customer_name VARCHAR(200),
+  PRIMARY KEY(id),
+  KEY (customer_name),
+  UNIQUE (customer_no)
+);
+-- 建立 唯一索引时必须保证所有的值是唯一的（除了null），若有重复数据，会报错。   
+-- 单独建唯一索引：
+CREATE UNIQUE INDEX idx_customer_no ON customer(customer_no); 
+-- 删除索引：
+DROP INDEX idx_customer_no on customer ;
+</code></pre>
+<h3 id="17-3-4-复合索引"><a href="#17-3-4-复合索引" class="headerlink" title="17.3.4 复合索引"></a>17.3.4 复合索引</h3><p>一个索引包含多个列，在数据库操作期间，复合索引比单值索引所需要的开销更小（对于相同的多个列建索引）<br>如果一个表中的数据在查询时有多个字段总是同时出现则这些字段就可以作为复合索引，形成索引覆盖可以提高查询的效率！</p>
+<pre><code class="sql">-- 随表一起建索引：
+CREATE TABLE customer (
+    id INT(10) UNSIGNED  AUTO_INCREMENT ,
+    customer_no VARCHAR(200),
+    customer_name VARCHAR(200),
+  PRIMARY KEY(id),
+  KEY (customer_name),
+  UNIQUE (customer_name),
+  KEY (customer_no,customer_name)
+);
+-- 单独建索引：
+CREATE INDEX idx_no_name ON customer(customer_no,customer_name); 
+-- 删除索引：
+DROP INDEX idx_no_name  on customer ;
+</code></pre>
+<h3 id="17-3-5-聚集索引与非聚集索引"><a href="#17-3-5-聚集索引与非聚集索引" class="headerlink" title="17.3.5 聚集索引与非聚集索引"></a>17.3.5 聚集索引与非聚集索引</h3><p>。。。。</p>
+<h2 id="17-4-底层原理"><a href="#17-4-底层原理" class="headerlink" title="17.4 底层原理"></a>17.4 底层原理</h2><p><a target="_blank" rel="noopener" href="https://blog.codinglabs.org/articles/theory-of-mysql-index.html">https://blog.codinglabs.org/articles/theory-of-mysql-index.html</a></p>
+<h1 id="18-数据库之用户管理"><a href="#18-数据库之用户管理" class="headerlink" title="18. 数据库之用户管理"></a>18. 数据库之用户管理</h1><p>只使用root用户有安全隐患。这时就需要MySQL的用户管理。给不同的用户授予某个库的权限，他们就能使用这个库。不然不能操纵这个库。</p>
+<h2 id="18-1-用户信息"><a href="#18-1-用户信息" class="headerlink" title="18.1 用户信息"></a>18.1 用户信息</h2><p> MySQL中的用户，都存储在系统数据库mysql的user表中</p>
+<pre><code class="sql"> select host,user,authentication_string from user;
+ 
+ +-----------+------------------+------------------------------------------------------------------------+
+| host      | user             | authentication_string                                                  |
++-----------+------------------+------------------------------------------------------------------------+
+| localhost | mysql.infoschema | $A$005$THISISACOMBINATIONOFINVALIDSALTANDPASSWORDTHATMUSTNEVERBRBEUSED |
+| localhost | mysql.session    | $A$005$THISISACOMBINATIONOFINVALIDSALTANDPASSWORDTHATMUSTNEVERBRBEUSED |
+| localhost | mysql.sys        | $A$005$THISISACOMBINATIONOFINVALIDSALTANDPASSWORDTHATMUSTNEVERBRBEUSED |
+Oj|2&quot;f +]3DK66Zb0wicchrIoGuus6pDShjf4s2QoccMvGXfdAnFHU/ |
++-----------+------------------+------------------------------------------------------------------------+
+
+/*
+host：表示这个用户可以从哪个主机登陆，如果是localhost，表示只能从本机登陆
+user：用户名
+authentication_string：用户密码通过password函数加密后的
+*_priv：用户拥有的权限
+*/
+</code></pre>
+<h2 id="18-2-创建用户"><a href="#18-2-创建用户" class="headerlink" title="18.2 创建用户"></a>18.2 创建用户</h2><pre><code class="sql">create user &#39;用户名&#39;@&#39;登陆主机/ip&#39; identified by &#39;密码&#39;;
+
+create user &#39;zhangsan&#39;@&#39;localhost&#39; identified by &#39;123456&#39;; 
+</code></pre>
+<h2 id="18-3-删除用户"><a href="#18-3-删除用户" class="headerlink" title="18.3 删除用户"></a>18.3 删除用户</h2><pre><code class="sql">drop user ’用户名‘@&#39;主机名&#39;;
+
+drop user &#39;zhangsan&#39;@&#39;localhost&#39;;
+-- 如果没有后面的@‘localhost’会导致删除失败，默认是@’%’，表示所有地方都可以登录的用户。
+</code></pre>
+<h2 id="18-4-修改用户密码"><a href="#18-4-修改用户密码" class="headerlink" title="18.4 修改用户密码"></a>18.4 修改用户密码</h2><pre><code class="sql">-- 修改自己密码
+set password=password(&#39;新的密码&#39;);
+
+-- root用户修改指定的用户的密码
+set password for &#39;用户名&#39;@&#39;主机名&#39;=password(&#39;新的密码&#39;)；
+set password for &#39;zhangsan&#39;@&#39;localhost&#39;=password(&#39;abcdefg&#39;);
+</code></pre>
+<h2 id="18-5-数据库权限"><a href="#18-5-数据库权限" class="headerlink" title="18.5 数据库权限"></a>18.5 数据库权限</h2><p>create、drop…</p>
+<h2 id="18-6-给用户授权"><a href="#18-6-给用户授权" class="headerlink" title="18.6 给用户授权"></a>18.6 给用户授权</h2><pre><code class="sql">grant 权限列表 on 库.对象名 to &#39;用户名&#39;@&#39;登陆位置&#39; [identified by &#39;密码&#39;]
+
+grant select on ...
+ 
+grant select, delete, create on ....
+ 
+grant all [privileges] on ... -- 表示赋予该用户在该对象上的所有权限
+</code></pre>
+<h2 id="18-7-回收权限"><a href="#18-7-回收权限" class="headerlink" title="18.7 回收权限"></a>18.7 回收权限</h2><pre><code class="sql">revoke 权限列表 on 库.对象名 from &#39;用户名&#39;@&#39;登陆位置&#39;
+
+revoke all on test1.tt2 from &#39;zhangsan&#39;@&#39;localhost&#39;;
+</code></pre>
+<h1 id="19-MySQL数据备份与数据恢复"><a href="#19-MySQL数据备份与数据恢复" class="headerlink" title="19. MySQL数据备份与数据恢复"></a>19. MySQL数据备份与数据恢复</h1><h2 id="19-1-直接拷贝数据库文件"><a href="#19-1-直接拷贝数据库文件" class="headerlink" title="19.1 直接拷贝数据库文件"></a>19.1 直接拷贝数据库文件</h2><p>可视化工具，或者找到数据库文件保存的位置复制</p>
+<h2 id="19-2-mysqldump"><a href="#19-2-mysqldump" class="headerlink" title="19.2 mysqldump"></a>19.2 mysqldump</h2><ul>
+<li>MySQL自带的备份工具，可方便实现对Msal 的备份</li>
+<li>可以将指定的库、表导出为SQL脚本</li>
+<li>使用命令mysq|导入备份的数据</li>
+</ul>
+<p><strong>语法：</strong></p>
+<pre><code class="sql">-- 数据库备份
+mysqldump -u用户名 -p [密码] [选项] [数据库名] &gt; /备份路径/备份文件名
+
+-- linux 系统下示例
+mysqldump -u root -p auth &gt; /backup/auth.sql
+mysqldump -u root -p mysql &gt; /bakcup/mysql.sql
+
+-- 数据表备份
+mysqldump -u 用户名-p [密码] [|选项] 数据库名 表名 &gt; /备份路径/备份文件名
+</code></pre>
+<h2 id="19-3-恢复数据库"><a href="#19-3-恢复数据库" class="headerlink" title="19.3 恢复数据库"></a>19.3 恢复数据库</h2><ul>
+<li><p>使用mysqldump导出的脚本，可使用导入的方法</p>
+<ul>
+<li>source命令</li>
+<li>mysql命令</li>
+</ul>
+</li>
+<li><p>使用source恢复数据库步骤</p>
+<ul>
+<li>登录到MySQL数据库</li>
+<li>执行source备份sq|脚本的路径</li>
+</ul>
+</li>
+<li><p>使用mysql命令恢复数据</p>
+</li>
+</ul>
+<pre><code class="sql">mysql -u用户名-p [密码] &lt;库备份脚本的路径
+
+mysql -u root -p &lt; /backup/all-data.sql
+</code></pre>
+<h1 id="20-视图"><a href="#20-视图" class="headerlink" title="20. 视图"></a>20. 视图</h1><p>视图（子查询）：是<strong>从一个或多个表导出的虚拟的表</strong>，其内容由查询定义。具有普通表的结构，但是不实现数据存储。<strong>单表视图一般用于查询和修改</strong>，会改变基本表的数据；<strong>多表视图一般用于查询</strong>，不会改变基本表的数据。</p>
+<p><strong>视图的作用：</strong></p>
+<ul>
+<li>简化了操作，把经常使用的数据定义为视图</li>
+<li>安全性，用户只能查询和修改能看到的数据</li>
+<li>逻辑上的独立性，屏蔽了真实表的结构带来的影响</li>
+</ul>
+<p><strong>缺点：</strong></p>
+<ul>
+<li>性能差</li>
+<li>修改限制</li>
+</ul>
+<pre><code class="sql">/**** 1、创建和删除视图 ****/
+
+-- 创建视图(指定某些字段，显示字段时重命名)，后面还可以接WHERE进行条件查询
+CREATE VIEW v1(b,a) AS SELECT bookName, author FROM t_book;
+// 通过视图来查询（只能查询到指定的字段，提高了安全性）
+SELECT * FROM v1;
+
+-- 删除视图（视图只是一种虚拟的表，删除视图对原来的数据表没有影响）
+DROP VIEW IF EXISTS v1;
+
+/**** 2、查看视图 ****/
+
+-- 查看视图
+desc v1;
+
+-- 查看视图基本信息
+SHOW TABLE STATUS LIKE &#39;v1&#39;;
+
+-- 查看视图详细信息
+SHOW CREATE VIEW v1;
+
+/**** 3、修改视图 ****/
+
+-- 修改视图
+CREATE OR REPLACE VIEW v1(b,p) AS SELECT bookName, price FROM t_book;
+
+ALTER VIEW v1 AS SELECT * FROM t_book;
+
+/**** 4、更新视图 ****/
+
+-- 向视图中插入数据（其实就是在表中插入数据）
+INSERT INTO v1 VALUES ( &quot;6&quot;, &quot;中国历史&quot;, &quot;MK&quot;, &quot;45&quot;, &quot;4&quot;);
+
+-- 更新视图的数据
+UPDATE v1 SET price=54 WHERE id=6;
+
+-- 删除视图的数据
+DELETE FROM v1 WHERE id=6;
+</code></pre>
+<h1 id="21-触发器"><a href="#21-触发器" class="headerlink" title="21. 触发器"></a>21. 触发器</h1><p>触发器（Trigger）是用户定义在关系表上的一类由事件驱动的特殊过程。</p>
+<ul>
+<li>触发器保存在数据库服务器中。</li>
+<li>任何用户对表的增、删、改操作均由服务器<strong>自动激活</strong>相应的触发器。</li>
+<li>触发器可以实施更为复杂的检查和操作，具有更精细和更强大的数据控制能力。</li>
+</ul>
+<p><strong>格式：</strong></p>
+<pre><code class="sql">DELIMITER $$
+CREATE TRIGREE 触发器的名字(自定义的) 触发时机(after/before) 事件类型(insert/update/delete) ON 表名 FOR EACH  ROW
+BEGIN
+   触发器处理的内容;
+END;$$
+-- 因为mysql遇到;就停止，所以这里使用DELIMITER重新指定执行符号为$$,完成触发器的创建
+
+
+-- 每当我添加一条数据，cc  表中的count +=1
+CREATE TRIGGER count_num AFTER INSERT ON user FOR EACH ROW 
+BEGIN
+  UPDATE cc SET count=count+1 WHERE id=1;
+END;
+
+-- 删除触发器
+DROP TRIGGER &lt;触发器名&gt; ON &lt;表名&gt;;
+</code></pre>
+<hr>
+<h1 id="22-JDBC"><a href="#22-JDBC" class="headerlink" title="22. JDBC"></a>22. JDBC</h1><h2 id="22-1-概述"><a href="#22-1-概述" class="headerlink" title="22.1 概述"></a>22.1 概述</h2><p>JDBC（<strong>J</strong>ava <strong>D</strong>ata<strong>B</strong>ase <strong>C</strong>onnectivity）是Java和数据库之间的一个桥梁，是一个<strong>规范</strong>而不是一个实现，能够<strong>执行SQL语句</strong>。它由一组用<strong>Java语言</strong>编写的类和接口组成。</p>
+<p><strong>驱动：就像显卡，mysql-connector-java-8.0.23.jar</strong></p>
+<p><img src="http://zy.zlimilz.cn/image-20220903192921461.png" alt="image-20220903192921461"></p>
+<h2 id="22-2-JDBC连接数据库"><a href="#22-2-JDBC连接数据库" class="headerlink" title="22.2 JDBC连接数据库"></a>22.2 JDBC连接数据库</h2><p><strong>JDBC连接步骤</strong>：</p>
+<ul>
+<li>导入需要操作的数据库jdbc驱动包和创建数据库，<strong>mysql8.0的驱动写法为：“com.mysql.cj.jdbc.Driver”</strong></li>
+<li>通过DriverManager类中getConnection方法获取到对应数据库连接对象</li>
+<li>获得执行sql对象 Statement</li>
+<li>编写sql语句</li>
+<li>接收并处理返回的结果</li>
+<li>释放资源，关闭连接</li>
+</ul>
+<pre><code class="java">package com.zhang.demo01;
+
+import java.sql.*;
+
+public class JdbcFirstDemo &#123;
+
+    public static void main(String[] args) throws ClassNotFoundException, SQLException &#123;
+        //mysql8.0的驱动写法为：“com.mysql.cj.jdbc.Driver”
+        //1. 加载驱动
+        Class.forName(&quot;com.mysql.cj.jdbc.Driver&quot;);// 固定写法，加载驱动
+
+        //2. 用户信息和url
+        /*
+        useUnicode=true&amp;characterEncoding=utf-8 指定字符编码
+        useSSL=true 是否使用安全套接字协议
+        */
+        String url = &quot;jdbc:mysql://localhost:3306/teaching?useUnicode=true&amp;characterEncoding=utf-8&amp;useSSL=true&quot;;
+        String username = &quot;root&quot;;
+        String password = &quot;123456&quot;;
+
+        //3. 连接成功，数据库对象 Connection 代表数据库
+        Connection connection = DriverManager.getConnection(url, username, password);
+
+        //4. 执行SQL的对象 Statement 执行sql对象
+        Statement statement = connection.createStatement();
+
+        //5. 执行sql的对象  去  执行，可能存在结果，查看返回结果
+        String sql = &quot;select * from student1&quot;;
+        ResultSet resultSet = statement.executeQuery(sql);//返回的结果集，结果集中封装了我们全部的查询出来的结果
+
+        while (resultSet.next())&#123;
+            System.out.println(&quot;sid=&quot; + resultSet.getObject(&quot;sid&quot;));
+            System.out.println(&quot;sname=&quot; + resultSet.getObject(&quot;sname&quot;));
+            System.out.println(&quot;sage=&quot; + resultSet.getObject(&quot;sage&quot;));
+            System.out.println(&quot;classid=&quot; + resultSet.getObject(&quot;classid&quot;));
+            System.out.println(&quot;======================&quot;);
+        &#125;
+
+        //6. 释放连接
+        resultSet.close();
+        statement.close();
+        connection.close();
+
+    &#125;
+
+&#125;
+</code></pre>
+<h2 id="22-3-各类对象的解释"><a href="#22-3-各类对象的解释" class="headerlink" title="22.3 各类对象的解释"></a>22.3 各类对象的解释</h2><pre><code class="java">Class.forName(&quot;com.mysql.cj.jdbc.Driver&quot;);// 固定写法，加载驱动
+</code></pre>
+<p>原来的写法DriverManager.registerDriver(new Driver());，注册一个驱动，但是在这一段代码在Driver里面的静态代码块，可以不用调用直接激活，进行反射会默认进行类的初始化</p>
+<p><strong>url：</strong></p>
+<pre><code>协议://主机地址:端口号/数据库名?参数1&amp;参数2&amp;参数3
+mysql默认端口号3306，Oracle默认1521
+</code></pre>
+<p><strong>connection：</strong></p>
+<pre><code>connection代表数据库，操作数据库
+数据库自动提交 connection.setAutoCommit();
+事务提交      connection.commit();
+事务回滚      connection.rollback();
+</code></pre>
+<p><strong>statement（不安全）：</strong></p>
+<pre><code>statnment，执行sql的对象
+statement.executeQuery();//用于产生单个结果集的语句，例如select语句
+statement.execute();//执行任何sql
+statement.executeUpdate();//更新、插入、删除，都是用这个，返回一个受影响的行数
+</code></pre>
+<p><strong>resultSet：</strong></p>
+<pre><code>resultSet.getObject();//不用知道列类型的情况下使用
+//知道列的类型的情况下使用
+resultSet.getString();
+resultSet.getInt();
+resultSet.getFloat();
+...
+resultSet.next();//移动到下一个数据
+resultSet.beforeFirst();//移动到最前面，类似链表
+...
+</code></pre>
+<h2 id="22-4-数据库的增删查改"><a href="#22-4-数据库的增删查改" class="headerlink" title="22.4 数据库的增删查改"></a>22.4 数据库的增删查改</h2><p><strong>db.properties:配置文件</strong></p>
+<pre><code class="properties">driver=com.mysql.cj.jdbc.Driver
+url=jdbc:mysql://localhost:3306/teaching?useUnicode=true&amp;characterEncoding=utf-8&amp;useSSL=true
+username=root
+password=123456
+</code></pre>
+<p><strong>JdbcUtils:工具类</strong></p>
+<pre><code class="java">package com.zhang.demo02.utils;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.sql.*;
+import java.util.Properties;
+
+public class JdbcUtils &#123;
+
+    private static String driver = null;
+    private static String url = null;
+    private static String username = null;
+    private static String password = null;
+
+    static &#123;
+
+        try&#123;
+            InputStream in = JdbcUtils.class.getClassLoader().getResourceAsStream(&quot;db.properties&quot;);
+            Properties properties = new Properties();
+            properties.load(in);
+
+            driver = properties.getProperty(&quot;driver&quot;);
+            url = properties.getProperty(&quot;url&quot;);
+            username = properties.getProperty(&quot;username&quot;);
+            password = properties.getProperty(&quot;password&quot;);
+
+            //1. 驱动只用加载一次
+            Class.forName(driver);
+
+        &#125; catch (Exception e) &#123;
+            e.printStackTrace();
+        &#125;
+
+    &#125;
+
+    //获取连接
+    public static Connection getConnection() throws Exception&#123;
+        return DriverManager.getConnection(url, username, password);
+    &#125;
+
+    private static void closeRs(ResultSet rs) &#123;
+        if (rs != null)&#123;
+            try &#123;
+                rs.close();
+            &#125; catch (SQLException e) &#123;
+                e.printStackTrace();
+            &#125;
+        &#125;
+    &#125;
+
+    private static void closeSta(Statement st) &#123;
+        if (st != null)&#123;
+            try &#123;
+                st.close();
+            &#125; catch (SQLException e) &#123;
+                e.printStackTrace();
+            &#125;
+        &#125;
+    &#125;
+
+    private static void closeConn(Connection conn) &#123;
+        if (conn != null)&#123;
+            try &#123;
+                conn.close();
+            &#125; catch (SQLException e) &#123;
+                e.printStackTrace();
+            &#125;
+        &#125;
+    &#125;
+
+    //释放连接资源
+    public static void release(Connection conn, Statement st, ResultSet rs)&#123;
+        closeRs(rs);
+        closeSta(st);
+        closeConn(conn);
+
+
+    &#125;
+
+&#125;
+</code></pre>
+<p><strong>TestInsert:</strong></p>
+<pre><code class="java">public class TestInsert &#123;
+    public static void main(String[] args) &#123;
+        Connection conn = null;
+        Statement st = null;
+        ResultSet rs = null;
+
+        try&#123;
+            conn = JdbcUtils.getConnection();//获取数据库连接
+            st = conn.createStatement();//获得SQL的执行对象
+            String sql = &quot;INSERT INTO student1 VALUES(6,&#39;Mike&#39;,18,1007);&quot;;
+            int i = st.executeUpdate(sql);
+            if (i &gt; 0)&#123;
+                System.out.println(&quot;插入成功&quot;);
+            &#125;
+
+        &#125; catch (SQLException e) &#123;
+            e.printStackTrace();
+        &#125; catch (Exception e) &#123;
+            throw new RuntimeException(e);
+        &#125; finally &#123;
+            JdbcUtils.release(conn, st, rs);
+        &#125;
+    &#125;
+&#125;
+</code></pre>
+<p>注意：<strong>增删改操作的实现，只需要修改sql语句就可以，其他基本一致</strong></p>
+<p><strong>TestSelect:</strong></p>
+<pre><code class="java">public class TestSelect &#123;
+    public static void main(String[] args) &#123;
+        Connection conn = null;
+        Statement st = null;
+        ResultSet rs = null;
+
+        try&#123;
+            conn = JdbcUtils.getConnection();//获取数据库连接
+            st = conn.createStatement();//获得SQL的执行对象
+            String sql = &quot;select * from student1&quot;;
+            rs = st.executeQuery(sql);//查询最好使用
+            while (rs.next())&#123;
+                System.out.println(rs.getString(&quot;sname&quot;));
+            &#125;
+
+        &#125; catch (SQLException e) &#123;
+            e.printStackTrace();
+        &#125; catch (Exception e) &#123;
+            throw new RuntimeException(e);
+        &#125; finally &#123;
+            JdbcUtils.release(conn, st, rs);
+        &#125;
+    &#125;
+
+
+&#125;
+</code></pre>
+<p><strong>注意：查询最好使用executeQuery， ResultSet返回结果集</strong></p>
+<h4 id="登录测试（补充）"><a href="#登录测试（补充）" class="headerlink" title="登录测试（补充）"></a>登录测试（补充）</h4><pre><code class="java">package com.zhang.demo02;
+
+import com.zhang.demo02.utils.JdbcUtils;
+import org.junit.Test;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.Statement;
+
+public class MainTest &#123;
+
+    Connection conn = null;
+    Statement st = null;
+    ResultSet rs = null;
+
+    @Test   //查询所有
+    public void findAll() &#123;
+        try &#123;
+            conn = JdbcUtils.getConnection();
+            st = conn.createStatement();
+            String sql = &quot;select * from people&quot;;
+            rs = st.executeQuery(sql);
+            while (rs.next()) &#123;
+                String name = rs.getString(&quot;name&quot;);
+                String pwd = rs.getString(&quot;pwd&quot;);
+                System.out.println(&quot;name=&quot; + name + &quot;----pwd=&quot; + pwd);
+            &#125;
+        &#125; catch (Exception e) &#123;
+            throw new RuntimeException(e);
+        &#125; finally &#123;
+            JdbcUtils.release(conn, st, rs);
+        &#125;
+    &#125;
+
+    @Test //增加
+    public void insert() &#123;
+        try &#123;
+            conn = JdbcUtils.getConnection();
+            st = conn.createStatement();
+            String sql = &quot;insert into people (name,pwd) values (&#39;赵六&#39;,&#39;333&#39;)&quot;;
+            int i = st.executeUpdate(sql);
+            if (i &gt; 0) &#123;
+                System.out.println(&quot;增加成功&quot;);
+            &#125; else &#123;
+                System.out.println(&quot;增加失败&quot;);
+            &#125;
+        &#125; catch (Exception e) &#123;
+            throw new RuntimeException(e);
+        &#125; finally &#123;
+            JdbcUtils.release(conn, st, rs);
+        &#125;
+    &#125;
+
+    @Test   //修改
+    public void update() &#123;
+        try &#123;
+            conn = JdbcUtils.getConnection();
+            st = conn.createStatement();
+            String sql = &quot;update people set name=&#39;老王&#39; where id=4&quot;;
+            int i = st.executeUpdate(sql);
+            if (i &gt; 0) &#123;
+                System.out.println(&quot;修改成功&quot;);
+            &#125; else &#123;
+                System.out.println(&quot;修改失败&quot;);
+            &#125;
+        &#125; catch (Exception e) &#123;
+            throw new RuntimeException(e);
+        &#125; finally &#123;
+            JdbcUtils.release(conn, st, rs);
+        &#125;
+    &#125;
+
+    @Test   //删除
+    public void delete() &#123;
+        try &#123;
+            conn = JdbcUtils.getConnection();
+            st = conn.createStatement();
+            String sql = &quot;delete from people where id=3&quot;;
+            int i = st.executeUpdate(sql);
+            if (i &gt; 0) &#123;
+                System.out.println(&quot;删除成功&quot;);
+            &#125; else &#123;
+                System.out.println(&quot;删除失败&quot;);
+            &#125;
+        &#125; catch (Exception e) &#123;
+            throw new RuntimeException(e);
+        &#125; finally &#123;
+            JdbcUtils.release(conn, st, rs);
+        &#125;
+    &#125;
+
+    public void login(String name, String pwd) &#123;
+        try &#123;
+            conn = JdbcUtils.getConnection();
+            st = conn.createStatement();
+            String sql = &quot;select * from people where name=&#39;&quot; + name + &quot;&#39; and pwd=&#39;&quot; + pwd + &quot;&#39;&quot;;
+            rs = st.executeQuery(sql);
+            if (rs.next()) &#123;
+                System.out.println(&quot;登录成功&quot;);
+            &#125; else &#123;
+                System.out.println(&quot;登录失败&quot;);
+            &#125;
+
+        &#125; catch (Exception e) &#123;
+            throw new RuntimeException(e);
+        &#125; finally &#123;
+            JdbcUtils.release(conn, st, rs);
+        &#125;
+    &#125;
+
+    public static void main(String[] args) &#123;
+        MainTest mt = new MainTest();
+        mt.login(&quot;张三&quot;, &quot;123&quot;);
+    &#125;
+
+
+
+
+&#125;
+</code></pre>
+<h2 id="22-5-Sql注入"><a href="#22-5-Sql注入" class="headerlink" title="22.5 Sql注入"></a>22.5 Sql注入</h2><p>Sql 注入攻击是通过将恶意的 Sql 查询或添加语句插入到应用的输入参数中，再在后台 Sql 服务器上解析执行进行的攻击，它目前黑客对数据库进行攻击的最常用手段之一。<strong>字符串拼接</strong></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/yujia_666/article/details/90296495?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522166227496016782244861283%2522%252C%2522scm%2522%253A%252220140713.130102334..%2522%257D&request_id=166227496016782244861283&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~top_positive~default-1-90296495-null-null.142%5Ev46%5Epc_rank_34_1&utm_term=sql%E6%B3%A8%E5%85%A5&spm=1018.2226.3001.4187">https://blog.csdn.net/yujia_666/article/details/90296495?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522166227496016782244861283%2522%252C%2522scm%2522%253A%252220140713.130102334..%2522%257D&amp;request_id=166227496016782244861283&amp;biz_id=0&amp;utm_medium=distribute.pc_search_result.none-task-blog-2~all~top_positive~default-1-90296495-null-null.142^v46^pc_rank_34_1&amp;utm_term=sql%E6%B3%A8%E5%85%A5&amp;spm=1018.2226.3001.4187</a></p>
+<pre><code class="java">public class SQl注入 &#123;
+
+    public static void test(String name, int id) &#123;
+        Connection conn = null;
+        Statement st = null;
+        ResultSet rs = null;
+
+        try &#123;
+            conn = JdbcUtils.getConnection();
+            st = conn.createStatement();
+            String sql = &quot;select * from student1 where sname=&#39;&quot;+name+&quot;&#39; and sid=&#39;&quot;+id+&quot;&#39;;&quot;;
+            /*
+            事实上的sql语句为select * from student1 where sname=&#39; &#39;or &#39;1=1&#39; and sid=&#39;3&#39;;
+            or &#39;1=1&#39;始终成立，直接进行查询了
+             */
+            rs = st.executeQuery(sql);
+            while (rs.next())&#123;
+                System.out.println(rs.getInt(&quot;sage&quot;));
+            &#125;
+
+        &#125; catch (Exception e)&#123;
+            e.printStackTrace();
+        &#125; finally &#123;
+            JdbcUtils.release(conn, st, rs);
+        &#125;
+    &#125;
+
+
+    public static void main(String[] args) &#123;
+        //test(&quot;王五&quot;, 3);
+        test(&quot; &#39;or &#39;1=1&quot;, 3);//模拟输入非法的量
+    &#125;
+
+&#125;
+</code></pre>
+<h2 id="22-6-PreparedStatement-防止sql注入"><a href="#22-6-PreparedStatement-防止sql注入" class="headerlink" title="22.6 PreparedStatement(防止sql注入)"></a>22.6 PreparedStatement(防止sql注入)</h2><p>PreparedStatement防止sql注入的方式是<strong>把用户非法输入的单引号用\反斜杠做了转义</strong>，从而到达防止sql注入的目的，<strong>在生产环境中一定要使用PreparedStatement。</strong></p>
+<p><strong>TestInsert:（删除修改区别在于sql语句不同）</strong></p>
+<pre><code class="java">public class TestInsert &#123;
+
+    public static void main(String[] args) &#123;
+        Connection conn = null;
+        PreparedStatement ps = null;
+
+        try &#123;
+            conn = JdbcUtils.getConnection();
+            //区别，使用？占位符代替参数
+            //INSERT INTO student1 VALUES(6,&#39;Mike&#39;,18,1007);
+            String sql = &quot;insert into student1 values (?, ?, ?, ?)&quot;;
+
+            ps = conn.prepareStatement(sql);//预编译SQL，先写sql，然后不执行
+
+            //手动给参数赋值
+            ps.setInt(1, 6);
+            ps.setString(2, &quot;zhangsan&quot;);
+            ps.setInt(3, 33);
+            ps.setInt(4, 1006);
+
+            //执行
+            int i = ps.executeUpdate();
+            if (i &gt; 0) &#123;
+                System.out.println(&quot;插入成功&quot;);
+            &#125;
+
+        &#125; catch (Exception e)&#123;
+            e.printStackTrace();
+        &#125; finally &#123;
+            JdbcUtils.release(conn, ps, null);
+        &#125;
+
+    &#125;
+    
+&#125;
+</code></pre>
+<p><strong>TestSelect:</strong></p>
+<pre><code class="java">public class TestSelect &#123;
+    public static void main(String[] args) &#123;
+        Connection conn = null;
+        Statement st = null;
+        ResultSet rs = null;
+
+        try&#123;
+            conn = JdbcUtils.getConnection();//获取数据库连接
+            st = conn.createStatement();//获得SQL的执行对象
+            String sql = &quot;select * from student1&quot;;
+            rs = st.executeQuery(sql);//查询最好使用
+            while (rs.next())&#123;
+                System.out.println(rs.getString(&quot;sname&quot;));
+            &#125;
+
+        &#125; catch (SQLException e) &#123;
+            e.printStackTrace();
+        &#125; catch (Exception e) &#123;
+            throw new RuntimeException(e);
+        &#125; finally &#123;
+            JdbcUtils.release(conn, st, rs);
+        &#125;
+    &#125;
+
+&#125;
+</code></pre>
+<h2 id="22-7-操作事务"><a href="#22-7-操作事务" class="headerlink" title="22.7 操作事务"></a>22.7 操作事务</h2><p><strong>ACDI原则：</strong></p>
+<ul>
+<li>原子性（A）：要么全成功，要么全失败！</li>
+<li>一致性（C）：SQL执行前后的数据完整性一致！</li>
+<li>持久性（D）：事务一旦提交就不可逆，不受外部因素影响（如断电之类的）！</li>
+<li>隔离性（I）：并发事务时，不能被其它事务的操作数据所干扰，业务之间要相互隔离</li>
+</ul>
+<p><strong>脏读：</strong>指一个事务读取了另外一个事务未提交的数据。</p>
+<p><strong>不可重复读：</strong>在一个事务内读取表的某一行数据，多次读取结果不同（不一定是错误，只是某些场合不对）</p>
+<p><strong>虚读（幻读）：</strong>指在一个事务内读取到了别的事务插入的数据，导致前后读取不一致</p>
+<p><strong>代码实现：</strong></p>
+<ul>
+<li>开启事务 conn.setAutoCommit(false);</li>
+<li>一组业务执行完毕，提交事务</li>
+<li>可以在catch语句中 显示的定义回滚语句，但默认失败就会回滚</li>
+</ul>
+<pre><code class="java">public class TestTransaction2 &#123;
+
+    public static void main(String[] args) &#123;
+        Connection conn = null;
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+
+        try &#123;
+            conn = JdbcUtils.getConnection();
+            //关闭数据库自动提交，自动会开启事务
+            conn.setAutoCommit(false);//开启事务
+            String sql1 = &quot;update account set money = money - 100 where name = &#39;A&#39;&quot;;
+            ps = conn.prepareStatement(sql1);
+            ps.executeUpdate();
+
+            int x = 1/0;//中间出现错误
+
+            String sql2 = &quot;update account set money = money + 100 where name = &#39;B&#39;&quot;;
+            ps = conn.prepareStatement(sql2);
+            ps.executeUpdate();
+
+            //业务完毕，提交事务
+            conn.commit();
+            System.out.println(&quot;成功&quot;);
+
+        &#125; catch (Exception e) &#123;
+            try &#123;
+                System.out.println(&quot;出问题了&quot;);
+                conn.rollback(); //如果失败则回滚事务
+            &#125; catch (SQLException ex) &#123;
+                throw new RuntimeException(ex);
+            &#125;
+        &#125; finally &#123;
+            JdbcUtils.release(conn, ps, rs);
+        &#125;
+
+    &#125;
+
+&#125;
+</code></pre>
+<h1 id="23-数据库连接池"><a href="#23-数据库连接池" class="headerlink" title="23. 数据库连接池"></a>23. 数据库连接池</h1><p><strong>一个容器（集合），存放数据库连接的容器</strong></p>
+<h2 id="23-1-数据库连接池技术的优点："><a href="#23-1-数据库连接池技术的优点：" class="headerlink" title="23.1 数据库连接池技术的优点："></a>23.1 数据库连接池技术的优点：</h2><ul>
+<li><strong>资源重用</strong>，避免了频繁创建，释放连接引起的大量性能开销。在减少系统消耗的基础上，另一方面也增加了系统运行环境的平稳性。</li>
+<li><strong>更快的系统反应速度</strong>，数据库连接池在初始化过程中，往往已经创建了若干数据库连接置于连接池中备用。此时连接的初始化工作均已完成。对于业务请求处理而言，直接利用现有可用连接，避免了数据库连接初始化和释放过程的时间开销，从而减少了系统的响应时间</li>
+<li><strong>新的资源分配手段</strong>，对于多应用共享同一数据库的系统而言，可在应用层通过数据库连接池的配置，实现某一应用最大可用数据库连接数的限制，避免某一应用独占所有的数据库资源</li>
+<li><strong>统一的连接管理，避免数据库连接泄漏</strong>，在较为完善的数据库连接池实现中，可根据预先的占用超时设定，强制回收被占用连接，从而避免了常规数据库连接操作中可能出现的资源泄露</li>
+</ul>
+<h2 id="23-2-三种开源的数据库连接池"><a href="#23-2-三种开源的数据库连接池" class="headerlink" title="23.2 三种开源的数据库连接池"></a>23.2 三种开源的数据库连接池</h2><h3 id="23-2-1-DBCP"><a href="#23-2-1-DBCP" class="headerlink" title="23.2.1 DBCP"></a>23.2.1 DBCP</h3><p>DBCP 是 Apache 软件基金组织下的开源连接池实现，使用DBCP数据源，应用程序应在系统中增加如下两个 jar 文件：<br>（1）Commons-dbcp.jar：连接池的实现<br>（2）Commons-pool.jar：连接池实现的依赖库</p>
+<p><strong>步骤：先导包，再配置dbcp.properties文件，创建DBCPUtils文件（获取连接的方法），最后创建测试类</strong></p>
+<p><img src="http://zy.zlimilz.cn/image-20220905162543205.png" alt="image-20220905162543205"></p>
+<p>dbcp.properties：</p>
+<pre><code class="properties">#连接设置
+driverClassName=com.mysql.cj.jdbc.Driver
+url=jdbc:mysql://localhost:3306/teaching?useUnicode=true&amp;characterEncoding=utf-8&amp;useSSL=true
+username=root
+password=123456
+#&lt;!-- 初始化连接 --&gt;
+initialSize=10
+
+#最大连接数量
+maxActive=50
+
+#&lt;!-- 最大空闲连接 --&gt;
+maxIdle=20
+
+#&lt;!-- 最小空闲连接 --&gt;
+minIdle=5
+
+#&lt;!-- 超时等待时间以毫秒为单位 6000毫秒/1000等于60秒 --&gt;
+maxWait=60000
+#JDBC驱动建立连接时附带的连接属性属性的格式必须为这样：[属性名=property;]
+#注意：&quot;user&quot; 与 &quot;password&quot; 两个属性会被明确地传递，因此这里不需要包含他们。
+connectionProperties=useUnicode=true;characterEncoding=utf-8;useSSL=false
+
+#指定由连接池所创建的连接的自动提交（auto-commit）状态。
+defaultAutoCommit=true
+
+#driver default 指定由连接池所创建的连接的只读（read-only）状态。
+#如果没有设置该值，则“setReadOnly”方法将不被调用。（某些驱动并不支持只读模式，如：Informix）
+defaultReadOnly=
+
+#driver default 指定由连接池所创建的连接的事务级别（TransactionIsolation）。
+#可用值为下列之一：（详情可见javadoc。）NONE,READ_UNCOMMITTED, READ_COMMITTED, REPEATABLE_READ, SERIALIZABLE
+defaultTransactionIsolation=REPEATABLE_READ
+</code></pre>
+<p>JdbcUtils_DBCP：</p>
+<pre><code class="java">public class JdbcUtils_DBCP &#123;
+
+    private static DataSource dataSource = null;
+
+    static &#123;
+
+        try&#123;
+            InputStream in = JdbcUtils.class.getClassLoader().getResourceAsStream(&quot;dbcpconfig.properties&quot;);
+            Properties properties = new Properties();
+            properties.load(in);
+            //创建数据源 工厂模式 --&gt; 创建
+            dataSource = BasicDataSourceFactory.createDataSource(properties);
+
+        &#125; catch (Exception e) &#123;
+            e.printStackTrace();
+        &#125;
+
+    &#125;
+
+    //获取连接
+    public static Connection getConnection() throws Exception&#123;
+        return dataSource.getConnection();
+    &#125;
+
+    //释放连接资源
+    public static void release(Connection conn, Statement st, ResultSet rs)&#123;
+        if (rs != null)&#123;
+            try &#123;
+                rs.close();
+            &#125; catch (SQLException e) &#123;
+                e.printStackTrace();
+            &#125;
+        &#125;
+        if (st != null)&#123;
+            try &#123;
+                st.close();
+            &#125; catch (SQLException e) &#123;
+                e.printStackTrace();
+            &#125;
+        &#125;
+        if (conn != null)&#123;
+            try &#123;
+                conn.close();
+            &#125; catch (SQLException e) &#123;
+                e.printStackTrace();
+            &#125;
+        &#125;
+    &#125;
+
+&#125;
+</code></pre>
+<p>TestDBCP:</p>
+<pre><code class="java">public class TestDBCP &#123;
+
+    public static void main(String[] args) &#123;
+        Connection conn = null;
+        PreparedStatement ps = null;
+
+        try &#123;
+            conn = JdbcUtils_DBCP.getConnection();
+            //区别，使用？占位符代替参数
+            //INSERT INTO student1 VALUES(6,&#39;Mike&#39;,18,1007);
+            String sql = &quot;insert into student1 values (?, ?, ?, ?)&quot;;
+
+            ps = conn.prepareStatement(sql);//预编译SQL，先写sql，然后不执行
+
+            //手动给参数赋值
+            ps.setInt(1, 6);
+            ps.setString(2, &quot;zhangsan&quot;);
+            ps.setInt(3, 33);
+            ps.setInt(4, 1006);
+
+            //执行
+            int i = ps.executeUpdate();
+            if (i &gt; 0) &#123;
+                System.out.println(&quot;插入成功&quot;);
+            &#125;
+
+        &#125; catch (Exception e)&#123;
+            e.printStackTrace();
+        &#125; finally &#123;
+            JdbcUtils_DBCP.release(conn, ps, null);
+        &#125;
+    &#125;
+
+&#125;
+</code></pre>
+<h3 id="23-2-2-C3P0"><a href="#23-2-2-C3P0" class="headerlink" title="23.2.2 C3P0"></a>23.2.2 C3P0</h3><p>C3P0 是一个开源组织提供的一个数据库连接池，速度相对较慢，稳定性还可以，hibernate官方推荐使用。需要的jar包：</p>
+<p>（1）c3p0-0.9.5.5.jar</p>
+<p>（2）mchange-commons-java-0.2.19.jar</p>
+<p>（3）commons-logging-1.2.jar</p>
+<p><strong>步骤：先导包，再配置c3p0-config.xml文件（名字必须这个），创建Utils文件（获取连接的方法），最后创建测试类</strong></p>
+<pre><code class="xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;c3p0-config&gt;
+    &lt;default-config&gt;
+        &lt;!-- 获取连接的4个基本信息 --&gt;
+        &lt;property name=&quot;driverClass&quot;&gt;com.mysql.cj.jdbc.Driver&lt;/property&gt;
+        &lt;property name=&quot;jdbcUrl&quot;&gt;jdbc:mysql://localhost:3306/teaching?useUnicode=true&amp;amp;characterEncoding=utf-8&amp;amp;useSSL=true&lt;/property&gt;
+        &lt;property name=&quot;user&quot;&gt;root&lt;/property&gt;
+        &lt;property name=&quot;password&quot;&gt;123456&lt;/property&gt;
+
+        &lt;!-- 涉及到数据库连接池的管理的相关属性的设置 --&gt;
+        &lt;!-- 若数据库中连接数不足时, 一次向数据库服务器申请多少个连接 --&gt;
+        &lt;property name=&quot;acquireIncrement&quot;&gt;5&lt;/property&gt;
+        &lt;!-- 初始化数据库连接池时连接的数量 --&gt;
+        &lt;property name=&quot;initialPoolSize&quot;&gt;10&lt;/property&gt;
+        &lt;!-- 数据库连接池中的最小的数据库连接数 --&gt;
+        &lt;property name=&quot;minPoolSize&quot;&gt;5&lt;/property&gt;
+        &lt;!-- 数据库连接池中的最大的数据库连接数 --&gt;
+        &lt;property name=&quot;maxPoolSize&quot;&gt;20&lt;/property&gt;
+    &lt;/default-config&gt;
+&lt;/c3p0-config&gt;
+</code></pre>
+<p><strong>这是默认的配置，还可以自己添加</strong></p>
+<p>JdbcUtils_C3P0:</p>
+<pre><code class="java">public class JdbcUtils_C3P0 &#123;
+
+    private static ComboPooledDataSource dataSource = null;
+
+    static &#123;
+
+        try&#123;
+            dataSource = new ComboPooledDataSource();
+
+
+        &#125; catch (Exception e) &#123;
+            e.printStackTrace();
+        &#125;
+
+    &#125;
+
+    //获取连接
+    public static Connection getConnection() throws Exception&#123;
+        return dataSource.getConnection();
+    &#125;
+
+    //释放连接资源
+    public static void release(Connection conn, Statement st, ResultSet rs)&#123;
+        if (rs != null)&#123;
+            try &#123;
+                rs.close();
+            &#125; catch (SQLException e) &#123;
+                e.printStackTrace();
+            &#125;
+        &#125;
+        if (st != null)&#123;
+            try &#123;
+                st.close();
+            &#125; catch (SQLException e) &#123;
+                e.printStackTrace();
+            &#125;
+        &#125;
+        if (conn != null)&#123;
+            try &#123;
+                conn.close();
+            &#125; catch (SQLException e) &#123;
+                e.printStackTrace();
+            &#125;
+        &#125;
+    &#125;
+
+&#125;
+</code></pre>
+<p>TestC3P0</p>
+<pre><code>public class TestC3P0 &#123;
+    public static void main(String[] args) &#123;
+        Connection conn = null;
+        PreparedStatement ps = null;
+
+        try &#123;
+            conn = JdbcUtils_C3P0.getConnection();
+            //区别，使用？占位符代替参数
+            //INSERT INTO student1 VALUES(6,&#39;Mike&#39;,18,1007);
+            String sql = &quot;insert into student1 values (?, ?, ?, ?)&quot;;
+
+            ps = conn.prepareStatement(sql);//预编译SQL，先写sql，然后不执行
+
+            //手动给参数赋值
+            ps.setInt(1, 7);
+            ps.setString(2, &quot;san&quot;);
+            ps.setInt(3, 33);
+            ps.setInt(4, 1006);
+
+            //执行
+            int i = ps.executeUpdate();
+            if (i &gt; 0) &#123;
+                System.out.println(&quot;插入成功&quot;);
+            &#125;
+
+        &#125; catch (Exception e)&#123;
+            e.printStackTrace();
+        &#125; finally &#123;
+            JdbcUtils_C3P0.release(conn, ps, null);
+        &#125;
+    &#125;
+&#125;
+</code></pre>
+<h3 id="23-2-3-Druid"><a href="#23-2-3-Druid" class="headerlink" title="23.2.3 Druid"></a>23.2.3 Druid</h3><p>Druid是阿里巴巴开源平台上一个数据库连接池实现，它结合了C3P0、DBCP、Proxool等DB池的优点，同时加入了日志监控，可以很好的监控DB池连接和SQL的执行情况，可以说是针对监控而生的DB连接池，可以说是目前最好的连接池之一。</p>
+
+    </div>
+    
+    
+    
+    
+</div>
+                        <footer id="footer">
+    <div class="footer-wrap">
+        <div>
+            © 20xx - 2022 MyBlog
+            <span class="footer-icon">
+                <i class="fa-solid fa-font-awesome fa-fw"></i>
+            </span>
+            @zhang
+        </div>
+        <div></div>
+        <div>Based on the <a target="_blank" rel="noopener" href="https://hexo.io">Hexo Engine</a> & <a target="_blank" rel="noopener" href="https://github.com/argvchs/hexo-theme-particlex">ParticleX Theme</a></div>
+        
+    </div>
+</footer>
+                    </div>
+                </div>
+            </transition>
+            <div id="showimg">
+                <img id="showimg-content" alt="showimg">
+            </div>
+        </div>
+        <script src="https://cdn.staticfile.org/highlight.js/11.5.1/highlight.min.js"></script>
+<script src="/js/function.js"></script>
+<script src="/js/particlex.js"></script>
+
+
+
+    </body>
+</html>
+
+<canvas
+    id="background"
+    style="position:fixed;top:0;left:0;width:100vw;height:100vh;pointer-events:none;z-index:-1"
+></canvas>
+<script src="/js/background.min.js"></script>
+
+<canvas
+    id="fireworks"
+    style="position:fixed;top:0;left:0;width:100vw;height:100vh;pointer-events:none;z-index:32767"
+></canvas>
+<script src="https://cdn.staticfile.org/animejs/3.2.1/anime.min.js"></script>
+<script src="/js/fireworks.min.js"></script>

@@ -7,8 +7,8 @@
         <title>MyBlog</title>
         <meta name="author" content="zhang">
         <meta name="description" content="lalala">
-        <meta name="keywords" content="">
-        <link rel="icon" href="">
+        <meta name="keywords" content="好好学习">
+        <link rel="icon" href="/images/avatar.png">
         <script src="https://cdn.staticfile.org/instant.page/5.1.1/instantpage.min.js" type="module"></script>
         <script src="https://cdn.staticfile.org/font-awesome/6.2.1/js/all.min.js"></script>
         <script src="https://cdn.staticfile.org/vue/3.2.45/vue.global.prod.min.js"></script>
@@ -51,24 +51,9 @@
             <span>&ensp;home</span>
         </a>
         
-        <a href="/about">
-            <i class="fa-solid fa-id-card fa-fw"></i>
-            <span>&ensp;about</span>
-        </a>
-        
         <a href="/archives">
             <i class="fa-solid fa-box-archive fa-fw"></i>
             <span>&ensp;archives</span>
-        </a>
-        
-        <a href="/categories">
-            <i class="fa-solid fa-bookmark fa-fw"></i>
-            <span>&ensp;categories</span>
-        </a>
-        
-        <a href="/tags">
-            <i class="fa-solid fa-tags fa-fw"></i>
-            <span>&ensp;tags</span>
         </a>
         
     </div>
@@ -90,15 +75,6 @@
                 </div>
             </a>
             
-            <a href="/about">
-                <div class="item">
-                    <div style="min-width: 20px; max-width: 50px; width: 10%">
-                        <i class="fa-solid fa-id-card fa-fw"></i>
-                    </div>
-                    <div style="min-width: 100px; max-width: 150%; width: 20%">about</div>
-                </div>
-            </a>
-            
             <a href="/archives">
                 <div class="item">
                     <div style="min-width: 20px; max-width: 50px; width: 10%">
@@ -108,31 +84,13 @@
                 </div>
             </a>
             
-            <a href="/categories">
-                <div class="item">
-                    <div style="min-width: 20px; max-width: 50px; width: 10%">
-                        <i class="fa-solid fa-bookmark fa-fw"></i>
-                    </div>
-                    <div style="min-width: 100px; max-width: 150%; width: 20%">categories</div>
-                </div>
-            </a>
-            
-            <a href="/tags">
-                <div class="item">
-                    <div style="min-width: 20px; max-width: 50px; width: 10%">
-                        <i class="fa-solid fa-tags fa-fw"></i>
-                    </div>
-                    <div style="min-width: 100px; max-width: 150%; width: 20%">tags</div>
-                </div>
-            </a>
-            
         </div>
         </transition>
     </div>
 </nav>
                     </div>
                     <div id="main">
-                        <div id="home-background" style="background-image: url()"></div>
+                        <div id="home-background" style="background-image: url(/images/background.jpg)"></div>
 <div id="home-head">
     
     <div id="home-info" class="home-info" @click="homeclick">
@@ -154,6 +112,33 @@
     <div id="home-posts">
         <div id="posts">
             
+
+<div class="post">
+    <a href="/2022/12/22/%E6%95%B0%E6%8D%AE%E5%BA%93/">
+        <h2 class="post-title">Eee</h2>
+    </a>
+    <div class="category-and-date">
+        
+        <span class="date">
+            <span class="icon">
+                <svg class="fa-icon"><use xlink:href="#calendar-solid"></use></svg>
+            </span>
+            2022/12/22
+        </span>
+    </div>
+    <div class="excerpt">
+        <div class="content" v-pre>
+            
+            
+            
+        </div>
+    </div>
+    <div class="post-tags">
+        
+        
+    </div>
+    <a href="/2022/12/22/%E6%95%B0%E6%8D%AE%E5%BA%93/" class="go-post">阅读全文</a>
+</div>
 
 <div class="post">
     <a href="/2022/12/22/test/">
@@ -231,7 +216,7 @@
         <div id="card-div">
     <div class="card-style" style="width: 300px">
         <div class="avatar">
-            <img src="" alt="avatar">
+            <img src="/images/avatar.png" alt="avatar">
         </div>
         <div class="name">
             zhang
@@ -244,7 +229,7 @@
             </div>
             
             <div class="description">
-                <p>…</p>
+                <p>小小博客</p>
 
             </div>
             
@@ -289,3 +274,16 @@
 
     </body>
 </html>
+
+<canvas
+    id="background"
+    style="position:fixed;top:0;left:0;width:100vw;height:100vh;pointer-events:none;z-index:-1"
+></canvas>
+<script src="/js/background.min.js"></script>
+
+<canvas
+    id="fireworks"
+    style="position:fixed;top:0;left:0;width:100vw;height:100vh;pointer-events:none;z-index:32767"
+></canvas>
+<script src="https://cdn.staticfile.org/animejs/3.2.1/anime.min.js"></script>
+<script src="/js/fireworks.min.js"></script>
