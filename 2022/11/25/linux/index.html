@@ -1,0 +1,1013 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=dark>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/avatar.png">
+  <link rel="icon" href="/img/avatar.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="zhang">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="Linux系统目录介绍 公司中的linux都是没有界面的  系统路径  &#x2F;表示根目录  ~表示&#x2F;root目录，[root@localhost ~]# 表示当前在root用户目录下  cd &#x2F; :切换到根目录(注意: cd与后面的命令之间都会有一个空格)  pwd : 显示当前所在的路径  ll : 显示当前所在目录下的所有的文件及文件夹的详细信息  ls : 显示当前">
+<meta property="og:type" content="article">
+<meta property="og:title" content="linux">
+<meta property="og:url" content="http://example.com/2022/11/25/linux/index.html">
+<meta property="og:site_name" content="MyBlog">
+<meta property="og:description" content="Linux系统目录介绍 公司中的linux都是没有界面的  系统路径  &#x2F;表示根目录  ~表示&#x2F;root目录，[root@localhost ~]# 表示当前在root用户目录下  cd &#x2F; :切换到根目录(注意: cd与后面的命令之间都会有一个空格)  pwd : 显示当前所在的路径  ll : 显示当前所在目录下的所有的文件及文件夹的详细信息  ls : 显示当前">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://zy.zlimilz.cn/image-20221202214515978.png">
+<meta property="og:image" content="http://zy.zlimilz.cn/image-20221202214701627.png">
+<meta property="og:image" content="http://zy.zlimilz.cn/image-20221203154710872.png">
+<meta property="og:image" content="http://zy.zlimilz.cn/image-20221203154751964.png">
+<meta property="og:image" content="http://zy.zlimilz.cn/image-20221203161218305.png">
+<meta property="og:image" content="http://zy.zlimilz.cn/image-20221203161416132.png">
+<meta property="og:image" content="http://zy.zlimilz.cn/image-20221203155300532.png">
+<meta property="og:image" content="http://zy.zlimilz.cn/image-20221203160038339.png">
+<meta property="article:published_time" content="2022-11-25T02:00:00.000Z">
+<meta property="article:modified_time" content="2022-12-23T04:39:26.302Z">
+<meta property="article:author" content="zhang">
+<meta property="article:tag" content="Linux">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://zy.zlimilz.cn/image-20221202214515978.png">
+  
+  
+  
+  <title>linux - MyBlog</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+  
+<link rel="stylesheet" href="/css/fluid-extension.css">
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.4","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>zyuner&#39;s blog</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="linux"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2022-11-25 10:00" pubdate>
+          2022年11月25日 上午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          4.5k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          38 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">linux</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h2 id="Linux系统目录介绍"><a href="#Linux系统目录介绍" class="headerlink" title="Linux系统目录介绍"></a>Linux系统目录介绍</h2><ul>
+<li><p>公司中的linux都是没有界面的</p>
+</li>
+<li><p>系统路径</p>
+<ul>
+<li><p>&#x2F;表示根目录</p>
+</li>
+<li><p>~表示&#x2F;root目录，[root@localhost ~]# 表示当前在root用户目录下</p>
+</li>
+<li><p>cd &#x2F; :切换到根目录(注意: cd与后面的命令之间都会有一个空格)</p>
+</li>
+<li><p>pwd : 显示当前所在的路径</p>
+</li>
+<li><p>ll : 显示当前所在目录下的所有的文件及文件夹的详细信息</p>
+</li>
+<li><p>ls : 显示当前所在目录下的所有的文件及文件夹,信息简略</p>
+</li>
+<li><p>cd .. :返回上一层目录</p>
+</li>
+<li><p>cd 文件夹名称:进入某个文件夹</p>
+</li>
+<li><p>systemctl stop firewalld :关闭防火墙</p>
+</li>
+<li><p>systemctl start firewalld :开启防火墙</p>
+</li>
+<li><p>systemctl status firewalld :查看防火墙的状态</p>
+</li>
+<li><p>ctrl+c : 中断</p>
+</li>
+<li><p>ctrl+insert  拷贝</p>
+</li>
+<li><p>shift+insert	粘贴</p>
+</li>
+</ul>
+</li>
+<li><p>文件夹</p>
+<ul>
+<li><strong>etc</strong> 存放放系统管理和配置文件.(profile&#x2F;sysconfig系统服务)</li>
+<li>home 存放所有用户文件的根目录，是用户主目录的基点，比如用户user的主目录就是&#x2F;home&#x2F;user，可以用~user表示</li>
+<li>root 用户root单独文件夹</li>
+<li>usr 用于存放系统应用程序，比较重要的目录&#x2F;usr&#x2F;local 本地系统管理软件安装目录（安装系统级的应用）。这是最庞大的目录，要用到的应用程序和文件几乎都在这个目录。类似于win系统的Program Files目录</li>
+<li>在usr&#x2F;local下新建一个app,所有压缩包都上传到app中</li>
+<li>创建目录: mkdir 目录名  回车</li>
+</ul>
+</li>
+</ul>
+<h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><ul>
+<li>vi(centos7之后的系统中有) 都是编辑文件(相当于windows中的记事本程序)<ul>
+<li>vi a.txt 是创建a.txt文档并且打开文件</li>
+<li>如果文件不存在,带有创建文件功能</li>
+<li>进入到编辑器后非可编辑状态,点击”i”或”insert”启用编辑状态，编辑后点击”esc”退出编辑状态</li>
+<li>:wq 保存并退出</li>
+<li>:q 不保存退出(适用于没有编辑时)</li>
+<li>:q! 强制退出</li>
+</ul>
+</li>
+<li>touch 创建空文件. (相当于在windows中右键新建文档)</li>
+<li>cat 预览文件全部内容<ul>
+<li>cat 文件名.后缀</li>
+</ul>
+</li>
+<li>echo 内容 &gt;&gt; 文件名  向文件中添加一些内容，会自动换行.</li>
+<li>ip addr 打印网卡信息centos7 </li>
+<li>reboot 重启</li>
+<li>安装上传下载工具(不能上传文件夹): yum install lrzsz<ul>
+<li>rz</li>
+</ul>
+</li>
+<li>tar zxvf 文件名,解压.tar文件</li>
+<li>unzip 文件名,解压.zip文件</li>
+<li>cp 原文件 新文件路径,复制文件<ul>
+<li>cp -r 复制文件夹</li>
+<li>cp -r abc bbb 复制文件夹abc到新的文件夹bbb,里面的内容都会被同时复制</li>
+<li>cp -r abc &#x2F;usr&#x2F;local&#x2F;app&#x2F;ccc</li>
+<li>拷贝到绝对路径&#x2F;usr&#x2F;local&#x2F;app&#x2F;下新的目录名称是ccc,同时目录下的文件也会被拷贝</li>
+</ul>
+</li>
+<li>mv 原文件  新文件: 剪切(具备重命名功能)<ul>
+<li>mv aa.txt abc 剪切aa.txt文件到abc目录中</li>
+<li>mv aa.txt dd.txt  在当前目录下的剪切操作就是重命名</li>
+</ul>
+</li>
+<li>rm [-rf] 文件名: 删除<ul>
+<li>rm dd.txt  删除前先询问是否要删除,输入y,即yes;n即No</li>
+<li>rm -f dd.txt 不用询问直接删除文件dd.txt</li>
+</ul>
+</li>
+<li>rm -r 删除目录<ul>
+<li>rm -rf bbb 不用询问直接删除文件bbb目录</li>
+<li>rm  bbb  删除前先询问是否要删除,输入y,即yes;n即No</li>
+<li>rm -r &#x2F;usr&#x2F;local&#x2F;abc&#x2F;aaa 根据文件加的全路径删除</li>
+</ul>
+</li>
+<li>rm -rf 强制删除目录,不需要确认</li>
+<li>clear 清除屏幕历史命令记录</li>
+<li>端口的控制<ul>
+<li>查看防火墙某个端口是否开放<ul>
+<li>firewall-cmd –query-port&#x3D;80&#x2F;tcp</li>
+</ul>
+</li>
+<li>开放防火墙端口80<ul>
+<li>firewall-cmd –zone&#x3D;public –add-port&#x3D;80&#x2F;tcp –permanent</li>
+</ul>
+</li>
+<li>关闭80端口<ul>
+<li>firewall-cmd –zone&#x3D;public –remove-port&#x3D;80&#x2F;tcp –permanent</li>
+</ul>
+</li>
+<li>配置立即生效，相当于让防火墙重新启动<ul>
+<li>firewall-cmd –reload</li>
+</ul>
+</li>
+<li>查看防火墙状态<ul>
+<li>systemctl status firewalld</li>
+</ul>
+</li>
+<li>关闭防火墙(相当于任意端口都是开放的，重启系统会再开启防火墙))<ul>
+<li>systemctl stop firewalld</li>
+</ul>
+</li>
+<li>禁用防火墙(启系统不会再开启防火墙了),要先关闭防火墙,才能使用这个命令<ul>
+<li>systemctl disable firewalld</li>
+</ul>
+</li>
+<li>打开防火墙<ul>
+<li>systemctl start firewalld</li>
+</ul>
+</li>
+<li>开放一段连续的端口<ul>
+<li>firewall-cmd –zone&#x3D;public –add-port&#x3D;8080-9999&#x2F;tcp –permanent</li>
+</ul>
+</li>
+<li>查看开放的端口列表<ul>
+<li>firewall-cmd –zone&#x3D;public –list-ports</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>列出所有使用过的历史命令: history（键盘的上下键可以调出历史使用过的命令）</li>
+<li>杀死进程<ul>
+<li>kill 进程码  进程还在运行,有可能杀不死</li>
+<li>kill -9进程码   9代表的就是9号信号，带有强制执行的意思</li>
+</ul>
+</li>
+</ul>
+<h2 id="不同用户登录效果"><a href="#不同用户登录效果" class="headerlink" title="不同用户登录效果"></a>不同用户登录效果</h2><ul>
+<li>创建新用户<ul>
+<li>useradd 新用户名</li>
+<li>给用户设置密码:passwd 用户名</li>
+</ul>
+</li>
+<li>删除用户<ul>
+<li>userdel 用户名</li>
+</ul>
+</li>
+<li>普通用户<ul>
+<li>[student@localhost ~]$  </li>
+<li>如果出现普通用户的用户名[student@localhost ~]表示当前登录的用户是student</li>
+<li>~表示在home&#x2F;student目录下</li>
+</ul>
+</li>
+<li>切换用户<ul>
+<li>su 用户名</li>
+</ul>
+</li>
+<li>从root用户切换到其他用户,可以不用输入密码,反过来必须输入用户密码</li>
+<li>root用户<ul>
+<li>[root@localhost &#x2F;]</li>
+</ul>
+</li>
+<li>授权用户<ul>
+<li>使用root用户在&#x2F;usr&#x2F;local下创建app2目录</li>
+<li>默认是root用户组，root用户可以访问</li>
+<li>需求：让zkpk用户访问app2</li>
+<li>需要授权app2给zkpk用户</li>
+<li>chown zkpk:zkpk app2  #意思是授权app2目录的访问权限为zkpk用户组:zkpk用户访问</li>
+</ul>
+</li>
+</ul>
+<h2 id="跨系统拷贝文件和目录"><a href="#跨系统拷贝文件和目录" class="headerlink" title="跨系统拷贝文件和目录"></a>跨系统拷贝文件和目录</h2><ul>
+<li>根据ip地址拷贝文件<ul>
+<li>192.168.111.128（目标系统的ip）</li>
+<li>scp HelloWorld.java 192.168.111.128:&#x2F;usr&#x2F;local&#x2F;app&#x2F;HelloWorld.java</li>
+</ul>
+</li>
+<li>拷贝目录<ul>
+<li>scp -r aa 192.168.111.128:&#x2F;usr&#x2F;local&#x2F;app&#x2F;aa</li>
+</ul>
+</li>
+</ul>
+<h2 id="linux中路径"><a href="#linux中路径" class="headerlink" title="linux中路径"></a>linux中路径</h2><ul>
+<li>所有需要写路径的地方支持两种写法<ul>
+<li>全路径,标志:以&#x2F;开头:表示从根目录下起始</li>
+<li>相对路径:从当前资源一步一步寻找其他资源过程</li>
+</ul>
+</li>
+</ul>
+<h2 id="把系统的ip设置为静态化"><a href="#把系统的ip设置为静态化" class="headerlink" title="把系统的ip设置为静态化"></a>把系统的ip设置为静态化</h2><ul>
+<li>当启动多个系统时，可能会因为启动的顺序不一样，每次ip地址不一样</li>
+<li>ifcfg-ens33保存了当前系统的网卡信息</li>
+<li>默认是BOOTPROTO&#x3D;”dhcp”，动态分配，自动获取</li>
+<li>设置静态化，以后就一直是这个ip地址</li>
+<li>将BOOTPROTO&#x3D;”dhcp”改为static</li>
+<li>添加ip，网关，dns</li>
+</ul>
+<p><img src="http://zy.zlimilz.cn/image-20221202214515978.png" srcset="/img/loading.gif" lazyload></p>
+<ul>
+<li>也可以配置第二个网卡，一个linux系统支持多个ip地址</li>
+<li>例如配置第二个时候<ul>
+<li>将文件名改为ifcig-ens33:1</li>
+<li>文件中的NAME，DEVICE改成ens33:1</li>
+<li>修改ip地址，不能是已经使用的</li>
+<li>reboot重启之后就能看到两个ip地址</li>
+<li>Windows中ping两个地址可以ping 的痛</li>
+</ul>
+</li>
+</ul>
+<p><img src="http://zy.zlimilz.cn/image-20221202214701627.png" srcset="/img/loading.gif" lazyload></p>
+<h2 id="修改时间和Windows一致"><a href="#修改时间和Windows一致" class="headerlink" title="修改时间和Windows一致"></a>修改时间和Windows一致</h2><ul>
+<li>安装ntp服务<ul>
+<li>yum install ntp</li>
+</ul>
+</li>
+<li>开起开机服务自启<ul>
+<li>systemctl enable ntpd</li>
+</ul>
+</li>
+<li>启动服务<ul>
+<li>systemctl start ntpd</li>
+</ul>
+</li>
+<li>更改时区<ul>
+<li>timedatectl set-timezone Asia&#x2F;Shanghai</li>
+</ul>
+</li>
+<li>启用ntp同步<ul>
+<li>timedatectl set-ntp yes</li>
+</ul>
+</li>
+<li>同步时间<ul>
+<li>ntpq -p</li>
+</ul>
+</li>
+</ul>
+<h2 id="安装jdk1-8和Tomcat"><a href="#安装jdk1-8和Tomcat" class="headerlink" title="安装jdk1.8和Tomcat"></a>安装jdk1.8和Tomcat</h2><ul>
+<li>Windows上卸载linux 版本的压缩包</li>
+<li>上传文件到linux中的 &#x2F;usr&#x2F;local&#x2F;app中</li>
+</ul>
+<p><img src="http://zy.zlimilz.cn/image-20221203154710872.png" srcset="/img/loading.gif" lazyload></p>
+<ul>
+<li>分别解压 tar -zxvf 压缩包，移动到app目录下</li>
+</ul>
+<p><img src="http://zy.zlimilz.cn/image-20221203154751964.png" srcset="/img/loading.gif" lazyload></p>
+<ul>
+<li><p>catalina.out是记录tomcat的日志文件</p>
+</li>
+<li><p>tailf可以动态的显示日志文件的信息</p>
+<ul>
+<li>tailf &#x2F;usr&#x2F;local&#x2F;tomcat&#x2F;logs&#x2F;catalina.out</li>
+</ul>
+</li>
+<li><p>从日志的最后n行开始动态的跟踪日志</p>
+<ul>
+<li>tailf -n &#x2F;usr&#x2F;local&#x2F;tomcat&#x2F;logs&#x2F;catalina.out</li>
+</ul>
+</li>
+<li><p>配置java环境变量</p>
+<ul>
+<li>vi &#x2F;etc&#x2F;profile</li>
+</ul>
+<p><img src="http://zy.zlimilz.cn/image-20221203161218305.png" srcset="/img/loading.gif" lazyload></p>
+<ul>
+<li>解析source文件或重启系统</li>
+<li>source &#x2F;etc&#x2F;profile</li>
+</ul>
+</li>
+<li><p>验证是否成功</p>
+</li>
+</ul>
+<p><img src="http://zy.zlimilz.cn/image-20221203161416132.png" srcset="/img/loading.gif" lazyload></p>
+<h2 id="安装mysql"><a href="#安装mysql" class="headerlink" title="安装mysql"></a>安装mysql</h2><ul>
+<li>yum远程安装<ul>
+<li>Yum(全称为 Yellow dogUpdater, Modified)是一个在Fedora和RedHat以及CentOS中的XShell前端软件包管理器。基于RPM包管理，能够从指定的服务器自动下载RPM包并且安装，可以自动处理依赖性关系，并且一次安装所有依赖的软件包，无须繁琐地一次次下载、安装。yum提供了查找、安装、删除某一个、一组甚至全部软件包的命令，而且命令简洁而又好记。</li>
+</ul>
+</li>
+<li>安装wget<ul>
+<li>yum -y install wget</li>
+</ul>
+</li>
+<li>下载mysql<ul>
+<li>wget <a target="_blank" rel="noopener" href="http://repo.mysql.com/mysql-community-release-el7-5.noarch.rpm">http://repo.mysql.com/mysql-community-release-el7-5.noarch.rpm</a></li>
+</ul>
+</li>
+<li>安装mysql-community-release-el7-5.noarch.rpm包<ul>
+<li>rpm -ivh mysql-community-release-el7-5.noarch.rpm</li>
+<li>可能会报错-bash: rpm -ivh mysql-community-release-el7-5.noarch.rpm: 未找到命令</li>
+<li>报错就是用强行安装<ul>
+<li>rpm -ivh –nodeps –force mysql-community-release-el7-5.noarch.rpm</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>安装mysql<ul>
+<li>yum install mysql-server</li>
+</ul>
+</li>
+</ul>
+<p><img src="http://zy.zlimilz.cn/image-20221203155300532.png" srcset="/img/loading.gif" lazyload></p>
+<ul>
+<li><p>启动mysql服务</p>
+<ul>
+<li>service mysqld start</li>
+</ul>
+</li>
+<li><p>设置开机自动启动</p>
+<ul>
+<li>chkconfig –level 345 mysqld on</li>
+</ul>
+</li>
+<li><p>mysql -u root -p</p>
+<ul>
+<li>登录，第一次不需要密码</li>
+</ul>
+</li>
+<li><p>修改密码</p>
+<ul>
+<li>&#x2F;usr&#x2F;bin&#x2F;mysqladmin -u root password ‘123456’</li>
+</ul>
+</li>
+<li><p>用Navicat连接mysql</p>
+<ul>
+<li>linux中必须打开防火墙端口3306</li>
+<li>firewall-cmd –zone&#x3D;public –add-port&#x3D;3306&#x2F;tcp –permanent</li>
+<li>主机名必须是linux的ip地址</li>
+</ul>
+</li>
+</ul>
+<h2 id="设置了密码后无法登录解决方法"><a href="#设置了密码后无法登录解决方法" class="headerlink" title="设置了密码后无法登录解决方法"></a>设置了密码后无法登录解决方法</h2><ul>
+<li>修改配置文件<ul>
+<li>vi &#x2F;etc&#x2F;my.cnf</li>
+</ul>
+</li>
+<li>在文件中添加一行<ul>
+<li>skip-grant-tables</li>
+</ul>
+</li>
+</ul>
+<p><img src="http://zy.zlimilz.cn/image-20221203160038339.png" srcset="/img/loading.gif" lazyload></p>
+<ul>
+<li>重启服务器<ul>
+<li>systemctl restart mysql.service</li>
+</ul>
+</li>
+<li>登录</li>
+</ul>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/linux/" class="category-chain-item">linux</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/Linux/">#Linux</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>linux</div>
+      <div>http://example.com/2022/11/25/linux/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>zhang</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2022年11月25日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2022/12/22/hello-world/" title="Hello World">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Hello World</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2019/10/10/test/" title="test">
+                        <span class="hidden-mobile">test</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+
+<!--单击显示文字-->
+<script type="text/javascript" src="/js/show_text.js"></script>
+
+<!--动态线条背景-->
+<script type="text/javascript"
+color="122 103 238" opacity='0.7' zIndex="-2" count="200" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js">
+</script>
+
+
+</script>
+</body>
+</html>

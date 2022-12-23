@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  
+  
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="/2022/12/22/hello-world/"/>
+    <url>/2022/12/22/hello-world/</url>
+    
+    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo new <span class="hljs-string">&quot;My New Post&quot;</span><br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo server<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo generate<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo deploy<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>linux</title>
+    <link href="/2022/11/25/linux/"/>
+    <url>/2022/11/25/linux/</url>
+    
+    <content type="html"><![CDATA[<h2 id="Linux系统目录介绍"><a href="#Linux系统目录介绍" class="headerlink" title="Linux系统目录介绍"></a>Linux系统目录介绍</h2><ul><li><p>公司中的linux都是没有界面的</p></li><li><p>系统路径</p><ul><li><p>&#x2F;表示根目录</p></li><li><p>~表示&#x2F;root目录，[root@localhost ~]# 表示当前在root用户目录下</p></li><li><p>cd &#x2F; :切换到根目录(注意: cd与后面的命令之间都会有一个空格)</p></li><li><p>pwd : 显示当前所在的路径</p></li><li><p>ll : 显示当前所在目录下的所有的文件及文件夹的详细信息</p></li><li><p>ls : 显示当前所在目录下的所有的文件及文件夹,信息简略</p></li><li><p>cd .. :返回上一层目录</p></li><li><p>cd 文件夹名称:进入某个文件夹</p></li><li><p>systemctl stop firewalld :关闭防火墙</p></li><li><p>systemctl start firewalld :开启防火墙</p></li><li><p>systemctl status firewalld :查看防火墙的状态</p></li><li><p>ctrl+c : 中断</p></li><li><p>ctrl+insert  拷贝</p></li><li><p>shift+insert粘贴</p></li></ul></li><li><p>文件夹</p><ul><li><strong>etc</strong> 存放放系统管理和配置文件.(profile&#x2F;sysconfig系统服务)</li><li>home 存放所有用户文件的根目录，是用户主目录的基点，比如用户user的主目录就是&#x2F;home&#x2F;user，可以用~user表示</li><li>root 用户root单独文件夹</li><li>usr 用于存放系统应用程序，比较重要的目录&#x2F;usr&#x2F;local 本地系统管理软件安装目录（安装系统级的应用）。这是最庞大的目录，要用到的应用程序和文件几乎都在这个目录。类似于win系统的Program Files目录</li><li>在usr&#x2F;local下新建一个app,所有压缩包都上传到app中</li><li>创建目录: mkdir 目录名  回车</li></ul></li></ul><h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><ul><li>vi(centos7之后的系统中有) 都是编辑文件(相当于windows中的记事本程序)<ul><li>vi a.txt 是创建a.txt文档并且打开文件</li><li>如果文件不存在,带有创建文件功能</li><li>进入到编辑器后非可编辑状态,点击”i”或”insert”启用编辑状态，编辑后点击”esc”退出编辑状态</li><li>:wq 保存并退出</li><li>:q 不保存退出(适用于没有编辑时)</li><li>:q! 强制退出</li></ul></li><li>touch 创建空文件. (相当于在windows中右键新建文档)</li><li>cat 预览文件全部内容<ul><li>cat 文件名.后缀</li></ul></li><li>echo 内容 &gt;&gt; 文件名  向文件中添加一些内容，会自动换行.</li><li>ip addr 打印网卡信息centos7 </li><li>reboot 重启</li><li>安装上传下载工具(不能上传文件夹): yum install lrzsz<ul><li>rz</li></ul></li><li>tar zxvf 文件名,解压.tar文件</li><li>unzip 文件名,解压.zip文件</li><li>cp 原文件 新文件路径,复制文件<ul><li>cp -r 复制文件夹</li><li>cp -r abc bbb 复制文件夹abc到新的文件夹bbb,里面的内容都会被同时复制</li><li>cp -r abc &#x2F;usr&#x2F;local&#x2F;app&#x2F;ccc</li><li>拷贝到绝对路径&#x2F;usr&#x2F;local&#x2F;app&#x2F;下新的目录名称是ccc,同时目录下的文件也会被拷贝</li></ul></li><li>mv 原文件  新文件: 剪切(具备重命名功能)<ul><li>mv aa.txt abc 剪切aa.txt文件到abc目录中</li><li>mv aa.txt dd.txt  在当前目录下的剪切操作就是重命名</li></ul></li><li>rm [-rf] 文件名: 删除<ul><li>rm dd.txt  删除前先询问是否要删除,输入y,即yes;n即No</li><li>rm -f dd.txt 不用询问直接删除文件dd.txt</li></ul></li><li>rm -r 删除目录<ul><li>rm -rf bbb 不用询问直接删除文件bbb目录</li><li>rm  bbb  删除前先询问是否要删除,输入y,即yes;n即No</li><li>rm -r &#x2F;usr&#x2F;local&#x2F;abc&#x2F;aaa 根据文件加的全路径删除</li></ul></li><li>rm -rf 强制删除目录,不需要确认</li><li>clear 清除屏幕历史命令记录</li><li>端口的控制<ul><li>查看防火墙某个端口是否开放<ul><li>firewall-cmd –query-port&#x3D;80&#x2F;tcp</li></ul></li><li>开放防火墙端口80<ul><li>firewall-cmd –zone&#x3D;public –add-port&#x3D;80&#x2F;tcp –permanent</li></ul></li><li>关闭80端口<ul><li>firewall-cmd –zone&#x3D;public –remove-port&#x3D;80&#x2F;tcp –permanent</li></ul></li><li>配置立即生效，相当于让防火墙重新启动<ul><li>firewall-cmd –reload</li></ul></li><li>查看防火墙状态<ul><li>systemctl status firewalld</li></ul></li><li>关闭防火墙(相当于任意端口都是开放的，重启系统会再开启防火墙))<ul><li>systemctl stop firewalld</li></ul></li><li>禁用防火墙(启系统不会再开启防火墙了),要先关闭防火墙,才能使用这个命令<ul><li>systemctl disable firewalld</li></ul></li><li>打开防火墙<ul><li>systemctl start firewalld</li></ul></li><li>开放一段连续的端口<ul><li>firewall-cmd –zone&#x3D;public –add-port&#x3D;8080-9999&#x2F;tcp –permanent</li></ul></li><li>查看开放的端口列表<ul><li>firewall-cmd –zone&#x3D;public –list-ports</li></ul></li></ul></li><li>列出所有使用过的历史命令: history（键盘的上下键可以调出历史使用过的命令）</li><li>杀死进程<ul><li>kill 进程码  进程还在运行,有可能杀不死</li><li>kill -9进程码   9代表的就是9号信号，带有强制执行的意思</li></ul></li></ul><h2 id="不同用户登录效果"><a href="#不同用户登录效果" class="headerlink" title="不同用户登录效果"></a>不同用户登录效果</h2><ul><li>创建新用户<ul><li>useradd 新用户名</li><li>给用户设置密码:passwd 用户名</li></ul></li><li>删除用户<ul><li>userdel 用户名</li></ul></li><li>普通用户<ul><li>[student@localhost ~]$  </li><li>如果出现普通用户的用户名[student@localhost ~]表示当前登录的用户是student</li><li>~表示在home&#x2F;student目录下</li></ul></li><li>切换用户<ul><li>su 用户名</li></ul></li><li>从root用户切换到其他用户,可以不用输入密码,反过来必须输入用户密码</li><li>root用户<ul><li>[root@localhost &#x2F;]</li></ul></li><li>授权用户<ul><li>使用root用户在&#x2F;usr&#x2F;local下创建app2目录</li><li>默认是root用户组，root用户可以访问</li><li>需求：让zkpk用户访问app2</li><li>需要授权app2给zkpk用户</li><li>chown zkpk:zkpk app2  #意思是授权app2目录的访问权限为zkpk用户组:zkpk用户访问</li></ul></li></ul><h2 id="跨系统拷贝文件和目录"><a href="#跨系统拷贝文件和目录" class="headerlink" title="跨系统拷贝文件和目录"></a>跨系统拷贝文件和目录</h2><ul><li>根据ip地址拷贝文件<ul><li>192.168.111.128（目标系统的ip）</li><li>scp HelloWorld.java 192.168.111.128:&#x2F;usr&#x2F;local&#x2F;app&#x2F;HelloWorld.java</li></ul></li><li>拷贝目录<ul><li>scp -r aa 192.168.111.128:&#x2F;usr&#x2F;local&#x2F;app&#x2F;aa</li></ul></li></ul><h2 id="linux中路径"><a href="#linux中路径" class="headerlink" title="linux中路径"></a>linux中路径</h2><ul><li>所有需要写路径的地方支持两种写法<ul><li>全路径,标志:以&#x2F;开头:表示从根目录下起始</li><li>相对路径:从当前资源一步一步寻找其他资源过程</li></ul></li></ul><h2 id="把系统的ip设置为静态化"><a href="#把系统的ip设置为静态化" class="headerlink" title="把系统的ip设置为静态化"></a>把系统的ip设置为静态化</h2><ul><li>当启动多个系统时，可能会因为启动的顺序不一样，每次ip地址不一样</li><li>ifcfg-ens33保存了当前系统的网卡信息</li><li>默认是BOOTPROTO&#x3D;”dhcp”，动态分配，自动获取</li><li>设置静态化，以后就一直是这个ip地址</li><li>将BOOTPROTO&#x3D;”dhcp”改为static</li><li>添加ip，网关，dns</li></ul><p><img src="http://zy.zlimilz.cn/image-20221202214515978.png"></p><ul><li>也可以配置第二个网卡，一个linux系统支持多个ip地址</li><li>例如配置第二个时候<ul><li>将文件名改为ifcig-ens33:1</li><li>文件中的NAME，DEVICE改成ens33:1</li><li>修改ip地址，不能是已经使用的</li><li>reboot重启之后就能看到两个ip地址</li><li>Windows中ping两个地址可以ping 的痛</li></ul></li></ul><p><img src="http://zy.zlimilz.cn/image-20221202214701627.png"></p><h2 id="修改时间和Windows一致"><a href="#修改时间和Windows一致" class="headerlink" title="修改时间和Windows一致"></a>修改时间和Windows一致</h2><ul><li>安装ntp服务<ul><li>yum install ntp</li></ul></li><li>开起开机服务自启<ul><li>systemctl enable ntpd</li></ul></li><li>启动服务<ul><li>systemctl start ntpd</li></ul></li><li>更改时区<ul><li>timedatectl set-timezone Asia&#x2F;Shanghai</li></ul></li><li>启用ntp同步<ul><li>timedatectl set-ntp yes</li></ul></li><li>同步时间<ul><li>ntpq -p</li></ul></li></ul><h2 id="安装jdk1-8和Tomcat"><a href="#安装jdk1-8和Tomcat" class="headerlink" title="安装jdk1.8和Tomcat"></a>安装jdk1.8和Tomcat</h2><ul><li>Windows上卸载linux 版本的压缩包</li><li>上传文件到linux中的 &#x2F;usr&#x2F;local&#x2F;app中</li></ul><p><img src="http://zy.zlimilz.cn/image-20221203154710872.png"></p><ul><li>分别解压 tar -zxvf 压缩包，移动到app目录下</li></ul><p><img src="http://zy.zlimilz.cn/image-20221203154751964.png"></p><ul><li><p>catalina.out是记录tomcat的日志文件</p></li><li><p>tailf可以动态的显示日志文件的信息</p><ul><li>tailf &#x2F;usr&#x2F;local&#x2F;tomcat&#x2F;logs&#x2F;catalina.out</li></ul></li><li><p>从日志的最后n行开始动态的跟踪日志</p><ul><li>tailf -n &#x2F;usr&#x2F;local&#x2F;tomcat&#x2F;logs&#x2F;catalina.out</li></ul></li><li><p>配置java环境变量</p><ul><li>vi &#x2F;etc&#x2F;profile</li></ul><p><img src="http://zy.zlimilz.cn/image-20221203161218305.png"></p><ul><li>解析source文件或重启系统</li><li>source &#x2F;etc&#x2F;profile</li></ul></li><li><p>验证是否成功</p></li></ul><p><img src="http://zy.zlimilz.cn/image-20221203161416132.png"></p><h2 id="安装mysql"><a href="#安装mysql" class="headerlink" title="安装mysql"></a>安装mysql</h2><ul><li>yum远程安装<ul><li>Yum(全称为 Yellow dogUpdater, Modified)是一个在Fedora和RedHat以及CentOS中的XShell前端软件包管理器。基于RPM包管理，能够从指定的服务器自动下载RPM包并且安装，可以自动处理依赖性关系，并且一次安装所有依赖的软件包，无须繁琐地一次次下载、安装。yum提供了查找、安装、删除某一个、一组甚至全部软件包的命令，而且命令简洁而又好记。</li></ul></li><li>安装wget<ul><li>yum -y install wget</li></ul></li><li>下载mysql<ul><li>wget <a href="http://repo.mysql.com/mysql-community-release-el7-5.noarch.rpm">http://repo.mysql.com/mysql-community-release-el7-5.noarch.rpm</a></li></ul></li><li>安装mysql-community-release-el7-5.noarch.rpm包<ul><li>rpm -ivh mysql-community-release-el7-5.noarch.rpm</li><li>可能会报错-bash: rpm -ivh mysql-community-release-el7-5.noarch.rpm: 未找到命令</li><li>报错就是用强行安装<ul><li>rpm -ivh –nodeps –force mysql-community-release-el7-5.noarch.rpm</li></ul></li></ul></li><li>安装mysql<ul><li>yum install mysql-server</li></ul></li></ul><p><img src="http://zy.zlimilz.cn/image-20221203155300532.png"></p><ul><li><p>启动mysql服务</p><ul><li>service mysqld start</li></ul></li><li><p>设置开机自动启动</p><ul><li>chkconfig –level 345 mysqld on</li></ul></li><li><p>mysql -u root -p</p><ul><li>登录，第一次不需要密码</li></ul></li><li><p>修改密码</p><ul><li>&#x2F;usr&#x2F;bin&#x2F;mysqladmin -u root password ‘123456’</li></ul></li><li><p>用Navicat连接mysql</p><ul><li>linux中必须打开防火墙端口3306</li><li>firewall-cmd –zone&#x3D;public –add-port&#x3D;3306&#x2F;tcp –permanent</li><li>主机名必须是linux的ip地址</li></ul></li></ul><h2 id="设置了密码后无法登录解决方法"><a href="#设置了密码后无法登录解决方法" class="headerlink" title="设置了密码后无法登录解决方法"></a>设置了密码后无法登录解决方法</h2><ul><li>修改配置文件<ul><li>vi &#x2F;etc&#x2F;my.cnf</li></ul></li><li>在文件中添加一行<ul><li>skip-grant-tables</li></ul></li></ul><p><img src="http://zy.zlimilz.cn/image-20221203160038339.png"></p><ul><li>重启服务器<ul><li>systemctl restart mysql.service</li></ul></li><li>登录</li></ul>]]></content>
+    
+    
+    <categories>
+      
+      <category>linux</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Linux</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>test</title>
+    <link href="/2019/10/10/test/"/>
+    <url>/2019/10/10/test/</url>
+    
+    <content type="html"><![CDATA[<h1 id="fafeaf"><a href="#fafeaf" class="headerlink" title="fafeaf"></a>fafeaf</h1><h2 id="fgasgerasg"><a href="#fgasgerasg" class="headerlink" title="fgasgerasg"></a>fgasgerasg</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> Class Hello &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span>&#123;<br>        System.out.println(<span class="hljs-string">&quot;gfgaga&quot;</span>);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>test</tag>
+      
+      <tag>Hello</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  
+</search>
